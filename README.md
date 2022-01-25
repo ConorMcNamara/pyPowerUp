@@ -19,3 +19,6 @@ Whenever possible, I tried to follow the R naming and code-style to ensure as mu
 Dong, N. & Maynard, R. A. (2013). PowerUp!: A tool for calculating minimum detectable effect sizes and minimum required sample sizes for experimental and quasi- experimental design studies, Journal of Research on Educational Effectiveness, 6(1), 24-67. doi: 10.1080/19345747.2012.673143. https://www.causalevaluation.org/uploads/7/3/3/6/73366257/powerup.xlsm
 
 Bulus, M., Dong, N., Kelcey, B., & Spybrook, J. (2019). PowerUpR: Power Analysis Tools for Multilevel Randomized Experiments. R package version 1.0.4. https://CRAN.R-project.org/package=PowerUpR
+
+## Alternate Implementations
+https://github.com/sophiamyang/pypowerup
