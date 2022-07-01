@@ -1,5 +1,5 @@
 from typing import Dict
-from scipy.stats import t as t_dist
+from scipy.stats import t as t_dist, nct
 from math import sqrt
 
 
@@ -63,9 +63,9 @@ def _power(effect_size: float, alpha: float, sse: float, df: float, two_tailed: 
         raise ValueError("degrees of freedom must be at least 1")
     lamda = effect_size / sse
     if two_tailed:
-        power = 1 - t_dist.cdf(t_dist.isf(alpha / 2, df), df, lamda) + t_dist.cdf(-t_dist.isf(alpha / 2, df), df, lamda)
+        power = 1 - nct.cdf(t_dist.isf(alpha / 2, df), df, lamda) + nct.cdf(-t_dist.isf(alpha / 2, df), df, lamda)
     else:
-        power = 1 - t_dist.cdf(t_dist.isf(alpha, df), df, lamda)
+        power = 1 - nct.cdf(t_dist.isf(alpha, df), df, lamda)
     return power
 
 
