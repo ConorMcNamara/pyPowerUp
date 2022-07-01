@@ -59,14 +59,29 @@ def mde_bcra3f2(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -137,14 +152,29 @@ def mde_bcra3r2(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -214,14 +244,29 @@ def mde_bcra4f3(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -306,14 +351,29 @@ def mde_bcra4r2(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -394,14 +454,29 @@ def mde_bcra4r3(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -449,14 +524,29 @@ def mde_bira2c1(
     sse = sqrt((1 - r21) / (p * (1 - p) * J * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -504,14 +594,29 @@ def mde_bira2f1(
     sse = sqrt((1 - r21) / (p * (1 - p) * J * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -571,14 +676,29 @@ def mde_bira2r1(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -652,14 +772,29 @@ def mde_bira3r1(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -748,14 +883,29 @@ def mde_bira4r1(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -812,14 +962,29 @@ def mde_cra2r2(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -886,14 +1051,29 @@ def mde_cra3r3(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -969,14 +1149,29 @@ def mde_cra4r4(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
 
@@ -1020,13 +1215,28 @@ def mde_ira1r1(
     sse = sqrt((1 - r21) / (p * (1 - p) * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f'{int((1 - round(alpha, 2)) * 100)}% Confidence Interval']]
-        str_print = ("Minimum Detectable Effect Size" + "\n" + "-" * 39 + "\n" +
-                     f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
-                     + "\n" + "-" * 39 + "\n" + f"Degrees of Freedom: {df}" + "\n" +
-                     f"Standardized Standard Error: {round(sse, 3)}" + "\n" + f"Type I Error Rate: {round(alpha, 2)}" + "\n" +
-                     f"Type II Error Rate: {round(1 - power, 2)}" + "\n"
-                     + f"Two-Tailed Test: {two_tailed}"
-                     )
+        confidence_intervals = [
+            round(i, 3)
+            for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]
+        ]
+        str_print = (
+            "Minimum Detectable Effect Size"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 2)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
+        )
         print(str_print)
     return mde
