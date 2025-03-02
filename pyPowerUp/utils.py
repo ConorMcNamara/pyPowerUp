@@ -79,7 +79,7 @@ def _sse_a221(esa: float, r2m2: float, p: float, J: float) -> float:
 def _se_b221(esa: float, esb: float, escp: float, rho2: float, r22: float, r21: float, r2m2: float, p: float, n: float,
              J: float) -> float:
     var_b221 = (rho2 * (1 - (r22 + p * (1 - p) * pow(esa * esb + escp, 2) / rho2 + (pow(esb, 2) / rho2) * (
-                1 - r2m2 - p * (1 - p) * pow(esa, 2)))) +
+            1 - r2m2 - p * (1 - p) * pow(esa, 2)))) +
                 (1 - rho2) * (1 - r21) / n) / (J * (1 - (r2m2 + p * (1 - p) * pow(esa, 2))))
     if var_b221 < 0:
         raise ValueError("Variance cannot be less than 0")
@@ -104,13 +104,14 @@ def _se_b1211(esb1: float, rho2: float, rhom2: float, r21: float, r2m1: float, n
     return sqrt(var_b1211)
 
 
-def _se_b211(esa, esB, esb1, escp, rho2, rhom2, r22, r21, r2m2, r2m1, n, J, p) -> float:
+def _se_b211(esa: float, esB: float, esb1: float, escp: float, rho2: float, rhom2: float, r22: float, r21: float,
+             r2m2: float, r2m1: float, n: float, J: float, p: float) -> float:
     t2mbar = rhom2 * (1 - r2m2 - (p * (1 - p) * pow(esa, 2)) / rhom2)
     sig2mbar = (1 - rhom2) * (1 - r2m1)
     t2ybar = rho2 * (1 - r22) - p * (1 - p) * pow(esa * esB + escp, 2) - \
              ((1 / (p * (1 - p))) * pow(esB, 2) * rhom2 * (1 - r2m2) +
               (1 / (p * (1 - p))) * pow(esB, 2) * (1 - rhom2) * (1 - r2m1) / n - pow(esa, 2) * pow(esB, 2)) / (
-                         1 / (p * (1 - p)))
+                     1 / (p * (1 - p)))
     sig2ybar = (1 - rho2) * (1 - r21 - (((1 - rhom2) / (1 - rho2)) * pow(esb1, 2) * (1 - r2m1)))
     var_b211 = (t2ybar + sig2ybar / n) / (J * (t2mbar + sig2mbar / n))
     if var_b211 < 0:
@@ -135,7 +136,7 @@ def _se_b321(rhom3: float, rho2: float, rho3: float, r2m2: float, r2m3: float, r
     return sqrt(var_b321)
 
 
-def _se_sobel(x, y, se_x, se_y) -> float:
+def _se_sobel(x: float, y: float, se_x: float, se_y: float) -> float:
     var_sobel = pow(x, 2) + pow(y, 2) + pow(se_x, 2) + pow(se_y, 2)
     if var_sobel < 0:
         raise ValueError("Variance cannot be less than 0")

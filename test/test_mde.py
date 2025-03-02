@@ -166,7 +166,8 @@ def test_bira3r1() -> None:
 
 
 def test_bira4r1() -> None:
-    result = mde.mde_bira4r1(rho4=.05, rho3=.15, rho2=.15, omega4=.50, omega3=.50, omega2=.50, n=10, J=4, K=4, L=27, alpha=0.05)
+    result = mde.mde_bira4r1(rho4=.05, rho3=.15, rho2=.15, omega4=.50, omega3=.50, omega2=.50, n=10, J=4, K=4, L=27,
+                             alpha=0.05)
     # mdes.bira4r1(rho4=.05, rho3=.15, rho2=.15, omega4=.50, omega3=.50, omega2=.50, n=10, J=4, K=4, L=27)
     #
     # Minimum detectable effect size:

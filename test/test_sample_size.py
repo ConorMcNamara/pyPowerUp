@@ -39,7 +39,8 @@ def test_bcra4r2() -> None:
 
 
 def test_bcra4r3() -> None:
-    result = sample_size.sample_size_bcra4r3(effect_size=0.316, rho4=.05, rho3=.15, rho2=.15, omega4=.50, n=10, J=4, K=4,
+    result = sample_size.sample_size_bcra4r3(effect_size=0.316, rho4=.05, rho3=.15, rho2=.15, omega4=.50, n=10, J=4,
+                                             K=4,
                                              alpha=0.05)
     # mrss.bcra4r3(es = .316, rho4=.05, rho3=.15, rho2=.15, omega4=.50, n=10, J=4, K=4)
     #
@@ -72,7 +73,8 @@ def test_bira2r1() -> None:
 
 
 def test_bira3r1() -> None:
-    result = sample_size.sample_size_bira3r1(effect_size=.045, rho3=.20, rho2=.15,omega3=.10, omega2=.10, n=69, J=10, alpha=0.05)
+    result = sample_size.sample_size_bira3r1(effect_size=.045, rho3=.20, rho2=.15, omega3=.10, omega2=.10, n=69, J=10,
+                                             alpha=0.05)
     # mrss.bira3r1(es = .045, rho3=.20, rho2=.15, omega3=.10, omega2=.10, n=69, J=10)
     #
     # K = 100

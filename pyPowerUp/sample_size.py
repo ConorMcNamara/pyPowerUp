@@ -7,20 +7,20 @@ import numpy as np
 
 
 def sample_size_bcra3f2(
-    rho2: float,
-    n: float,
-    J: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    K0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    g2: int = 0,
-    r21: float = 0,
-    r22: float = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        n: float,
+        J: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        K0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        g2: int = 0,
+        r21: float = 0,
+        r22: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 2
@@ -71,8 +71,8 @@ def sample_size_bcra3f2(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
-            rho2 * (1 - r22) / (p * (1 - p) * J)
-            + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
+                rho2 * (1 - r22) / (p * (1 - p) * J)
+                + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
         )
         if abs(K1 - K0) < tol:
             break
@@ -84,23 +84,23 @@ def sample_size_bcra3f2(
 
 
 def sample_size_bcra3r2(
-    rho2: float,
-    rho3: float,
-    omega3: float,
-    n: float,
-    J: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    K0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    g3: int = 0,
-    r21: float = 0,
-    r22: float = 0,
-    r2t3: float = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        omega3: float,
+        n: float,
+        J: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        K0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        g3: int = 0,
+        r21: float = 0,
+        r22: float = 0,
+        r2t3: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the power of a Three-Level Blocked Cluster-level Random Assignment Design,
     Treatment at Level 2
@@ -158,9 +158,9 @@ def sample_size_bcra3r2(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
-            rho3 * omega3 * (1 - r2t3)
-            + rho2 * (1 - r22) / (p * (1 - p) * J)
-            + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
+                rho3 * omega3 * (1 - r2t3)
+                + rho2 * (1 - r22) / (p * (1 - p) * J)
+                + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
         )
         if abs(K1 - K0) < tol:
             break
@@ -172,23 +172,23 @@ def sample_size_bcra3r2(
 
 
 def sample_size_bcra4f3(
-    rho2: float,
-    rho3: float,
-    n: float,
-    J: float,
-    K: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.05,
-    two_tailed: bool = True,
-    L0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    g3: int = 0,
-    r21: float = 0,
-    r22: float = 0,
-    r23: float = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        n: float,
+        J: float,
+        K: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.05,
+        two_tailed: bool = True,
+        L0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        g3: int = 0,
+        r21: float = 0,
+        r22: float = 0,
+        r23: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 3
@@ -245,9 +245,9 @@ def sample_size_bcra4f3(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
-            rho3 * (1 - r23) / (p * (1 - p) * K)
-            + rho2 * (1 - r22) / (p * (1 - p) * K * J)
-            + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n)
+                rho3 * (1 - r23) / (p * (1 - p) * K)
+                + rho2 * (1 - r22) / (p * (1 - p) * K * J)
+                + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n)
         )
         if abs(L1 - L0) < tol:
             break
@@ -259,27 +259,27 @@ def sample_size_bcra4f3(
 
 
 def sample_size_bcra4r2(
-    rho2: float,
-    rho3: float,
-    rho4: float,
-    omega3: float,
-    omega4: float,
-    n: float,
-    J: float,
-    K: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    L0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    r21: float = 0,
-    r22: float = 0,
-    r2t3: float = 0,
-    r2t4: float = 0,
-    g4: int = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        rho4: float,
+        omega3: float,
+        omega4: float,
+        n: float,
+        J: float,
+        K: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        L0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        r21: float = 0,
+        r22: float = 0,
+        r2t3: float = 0,
+        r2t4: float = 0,
+        g4: int = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
     at Level 2
@@ -346,10 +346,10 @@ def sample_size_bcra4r2(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
-            rho4 * omega4 * (1 - r2t4)
-            + rho3 * omega3 * (1 - r2t3) / K
-            + rho2 * (1 - r22) / (p * (1 - p) * K * J)
-            + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n)
+                rho4 * omega4 * (1 - r2t4)
+                + rho3 * omega3 * (1 - r2t3) / K
+                + rho2 * (1 - r22) / (p * (1 - p) * K * J)
+                + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n)
         )
         if abs(L1 - L0) < tol:
             break
@@ -361,26 +361,26 @@ def sample_size_bcra4r2(
 
 
 def sample_size_bcra4r3(
-    rho2: float,
-    rho3: float,
-    rho4: float,
-    omega4: float,
-    n: float,
-    J: float,
-    K: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    L0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    r21: float = 0,
-    r22: float = 0,
-    r23: float = 0,
-    r2t4: float = 0,
-    g4: int = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        rho4: float,
+        omega4: float,
+        n: float,
+        J: float,
+        K: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        L0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        r21: float = 0,
+        r22: float = 0,
+        r23: float = 0,
+        r2t4: float = 0,
+        g4: int = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
      at Level 3
@@ -444,10 +444,10 @@ def sample_size_bcra4r3(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
-            rho4 * omega4 * (1 - r2t4)
-            + rho3 * (1 - r23) / (p * (1 - p) * K)
-            + rho2 * (1 - r22) / (p * (1 - p) * K * J)
-            + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * K * J * n)
+                rho4 * omega4 * (1 - r2t4)
+                + rho3 * (1 - r23) / (p * (1 - p) * K)
+                + rho2 * (1 - r22) / (p * (1 - p) * K * J)
+                + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * K * J * n)
         )
         if abs(L1 - L0) < tol:
             break
@@ -457,17 +457,17 @@ def sample_size_bcra4r3(
 
 
 def sample_size_bira2c1(
-    n: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.05,
-    two_tailed: bool = True,
-    J0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    g1: int = 0,
-    r21: float = 0,
-    print_pretty: bool = True,
+        n: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.05,
+        two_tailed: bool = True,
+        J0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        g1: int = 0,
+        r21: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Two-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -522,17 +522,17 @@ def sample_size_bira2c1(
 
 
 def sample_size_bira2f1(
-    n: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.05,
-    two_tailed: bool = True,
-    J0: int = 10,
-    tol: bool = 0.10,
-    p: float = 0.50,
-    g1: int = 0,
-    r21: float = 0,
-    print_pretty: bool = True,
+        n: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.05,
+        two_tailed: bool = True,
+        J0: int = 10,
+        tol: bool = 0.10,
+        p: float = 0.50,
+        g1: int = 0,
+        r21: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -586,20 +586,20 @@ def sample_size_bira2f1(
 
 
 def sample_size_bira2r1(
-    rho2: float,
-    omega2: float,
-    n: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.05,
-    two_tailed: bool = True,
-    J0: int = 10,
-    tol: bool = 0.10,
-    p: float = 0.50,
-    g2: int = 0,
-    r21: float = 0,
-    r2t2: float = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        omega2: float,
+        n: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.05,
+        two_tailed: bool = True,
+        J0: int = 10,
+        tol: bool = 0.10,
+        p: float = 0.50,
+        g2: int = 0,
+        r21: float = 0,
+        r2t2: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Two-Level Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -651,7 +651,7 @@ def sample_size_bira2r1(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         J1 = pow(M / effect_size, 2) * (
-            rho2 * omega2 * (1 - r2t2) + (1 - rho2) * (1 - r21) / (p * (1 - p) * n)
+                rho2 * omega2 * (1 - r2t2) + (1 - rho2) * (1 - r21) / (p * (1 - p) * n)
         )
         if abs(J1 - J0) < tol:
             break
@@ -663,24 +663,24 @@ def sample_size_bira2r1(
 
 
 def sample_size_bira3r1(
-    rho2: float,
-    rho3: float,
-    omega2: float,
-    omega3: float,
-    n: float,
-    J: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    K0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    r21: float = 0,
-    r2t2: float = 0,
-    r2t3: float = 0,
-    g3: int = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        omega2: float,
+        omega3: float,
+        n: float,
+        J: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        K0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        r21: float = 0,
+        r2t2: float = 0,
+        r2t3: float = 0,
+        g3: int = 0,
+        print_pretty: bool = True,
 ) -> Optional[int]:
     """Calculates the minimum sample size of a Three-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -741,9 +741,9 @@ def sample_size_bira3r1(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
-            rho3 * omega3 * (1 - r2t3)
-            + rho2 * omega2 * (1 - r2t2) / J
-            + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
+                rho3 * omega3 * (1 - r2t3)
+                + rho2 * omega2 * (1 - r2t2) / J
+                + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
         )
         if abs(K1 - K0) < tol:
             break
@@ -755,28 +755,28 @@ def sample_size_bira3r1(
 
 
 def sample_size_bira4r1(
-    rho2: float,
-    rho3: float,
-    rho4: float,
-    omega2: float,
-    omega3: float,
-    omega4: float,
-    n: float,
-    J: float,
-    K: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    L0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    r21: float = 0,
-    r2t2: float = 0,
-    r2t3: float = 0,
-    r2t4: float = 0,
-    g4: int = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        rho4: float,
+        omega2: float,
+        omega3: float,
+        omega4: float,
+        n: float,
+        J: float,
+        K: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        L0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        r21: float = 0,
+        r2t2: float = 0,
+        r2t3: float = 0,
+        r2t4: float = 0,
+        g4: int = 0,
+        print_pretty: bool = True,
 ) -> Optional[float]:
     """Calculates the minimum sample size of a Four-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -846,10 +846,10 @@ def sample_size_bira4r1(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
-            rho4 * omega4 * (1 - r2t4)
-            + rho3 * omega3 * (1 - r2t3) / K
-            + rho2 * omega2 * (1 - r2t2) / (K * J)
-            + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * K * J * n)
+                rho4 * omega4 * (1 - r2t4)
+                + rho3 * omega3 * (1 - r2t3) / K
+                + rho2 * omega2 * (1 - r2t2) / (K * J)
+                + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * K * J * n)
         )
         if abs(L1 - L0) < tol:
             break
@@ -861,19 +861,19 @@ def sample_size_bira4r1(
 
 
 def sample_size_cra2r2(
-    rho2: float,
-    n: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    J0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    g2: int = 0,
-    r21: float = 0,
-    r22: float = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        n: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        J0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        g2: int = 0,
+        r21: float = 0,
+        r22: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[float]:
     """Calculates the minimum sample size of a Two-level Cluster-randomized Trials to Detect Main, Moderation and
     Mediation Effects
@@ -922,8 +922,8 @@ def sample_size_cra2r2(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         J1 = pow(M / effect_size, 2) * (
-            rho2 * (1 - r22) / (p * (1 - p))
-            + (1 - rho2) * (1 - r21) / (p * (1 - p) * n)
+                rho2 * (1 - r22) / (p * (1 - p))
+                + (1 - rho2) * (1 - r21) / (p * (1 - p) * n)
         )
         if abs(J1 - J0) < tol:
             break
@@ -935,22 +935,22 @@ def sample_size_cra2r2(
 
 
 def sample_size_cra3r3(
-    rho2: float,
-    rho3: float,
-    n: float,
-    J: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    K0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    g3: int = 0,
-    r21: float = 0,
-    r22: float = 0,
-    r23: float = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        n: float,
+        J: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        K0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        g3: int = 0,
+        r21: float = 0,
+        r22: float = 0,
+        r23: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[float]:
     """Calculates the minimum sample size of a Three-level Cluster-randomized Trials to Detect Main, Moderation,
     and Mediation Effects
@@ -1005,9 +1005,9 @@ def sample_size_cra3r3(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
-            rho3 * (1 - r23) / (p * (1 - p))
-            + rho2 * (1 - r22) / (p * (1 - p) * J)
-            + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
+                rho3 * (1 - r23) / (p * (1 - p))
+                + rho2 * (1 - r22) / (p * (1 - p) * J)
+                + (1 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
         )
         if abs(K1 - K0) < tol:
             break
@@ -1019,25 +1019,25 @@ def sample_size_cra3r3(
 
 
 def sample_size_cra4r4(
-    rho2: float,
-    rho3: float,
-    rho4: float,
-    n: float,
-    J: float,
-    K: float,
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed: bool = True,
-    L0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    r21: float = 0,
-    r22: float = 0,
-    r23: float = 0,
-    r24: float = 0,
-    g4: int = 0,
-    print_pretty: bool = True,
+        rho2: float,
+        rho3: float,
+        rho4: float,
+        n: float,
+        J: float,
+        K: float,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed: bool = True,
+        L0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        r21: float = 0,
+        r22: float = 0,
+        r23: float = 0,
+        r24: float = 0,
+        g4: int = 0,
+        print_pretty: bool = True,
 ) -> Optional[float]:
     """Calculates the minimum sample size of a Four-Level Cluster-randomized Trial
 
@@ -1097,10 +1097,10 @@ def sample_size_cra4r4(
         T2 = abs(t_dist.ppf(power, df))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
-            rho4 * (1 - r24) / (p * (1 - p))
-            + rho3 * (1 - r23) / (p * (1 - p) * K)
-            + rho2 * (1 - r22) / (p * (1 - p) * K * J)
-            + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n)
+                rho4 * (1 - r24) / (p * (1 - p))
+                + rho3 * (1 - r23) / (p * (1 - p) * K)
+                + rho2 * (1 - r22) / (p * (1 - p) * K * J)
+                + (1 - rho4 - rho3 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n)
         )
         if abs(L1 - L0) < tol:
             break
@@ -1112,16 +1112,16 @@ def sample_size_cra4r4(
 
 
 def sample_size_ira1r1(
-    effect_size: float = 0.25,
-    power: float = 0.80,
-    alpha: float = 0.10,
-    two_tailed=True,
-    n0: int = 10,
-    tol: float = 0.10,
-    p: float = 0.50,
-    g1: int = 0,
-    r21: float = 0,
-    print_pretty: bool = True,
+        effect_size: float = 0.25,
+        power: float = 0.80,
+        alpha: float = 0.10,
+        two_tailed=True,
+        n0: int = 10,
+        tol: float = 0.10,
+        p: float = 0.50,
+        g1: int = 0,
+        r21: float = 0,
+        print_pretty: bool = True,
 ) -> Optional[float]:
     """Calculates the minimum sample size of a Individual-level Random Assignment Design
 
