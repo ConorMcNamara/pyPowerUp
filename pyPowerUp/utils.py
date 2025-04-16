@@ -8,15 +8,15 @@ def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> D
 
     Parameters
     ----------
-    power: float
+    power : float
         The power of the test
-    alpha: float
+    alpha : float
         The significance level of the test
-    sse: float
+    sse : float
         The sum of squared errors of the test
-    df: int
+    df : int
         The degrees of freedom of the test
-    two_tailed: bool
+    two_tailed : bool
         Whether the test is one-tailed or two-tailed
 
     Returns
@@ -42,15 +42,15 @@ def _power(effect_size: float, alpha: float, sse: float, df: float, two_tailed: 
 
     Parameters
     ----------
-    effect_size: float
+    effect_size : float
         The effect size of the test
-    alpha: float
+    alpha : float
         The significance level of the test
-    sse: float
+    sse : float
         The sum of squared errors of the test
-    df: int
+    df : int
         The degrees of freedom of the test
-    two_tailed: bool
+    two_tailed : bool
         Whether the test is one-tailed or two-tailed
 
     Returns

@@ -22,29 +22,29 @@ def power_bcra3f2(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: int
+    K : int
         Number of level 3 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type I error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 2 units randomly assigned to treatment within level 3 units
-    g2: int, default=0
+    g2 : int, default=0
         Number of covariates at level 2
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -104,36 +104,36 @@ def power_bcra3r2(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    omega3: float
+    omega3 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 3 units to the residual
         variance at level 3
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: int
+    K : int
         Number of level 3 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 2 units randomly assigned to the treatment within level 3 units
-    g3: int, default=0
+    g3 : int, default=0
         Number of covariates at level 3
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    r2t3: float, default=0
+    r2t3 : float, default=0
         Proportion of treatment effect variance among level 3 units explained by level 3 covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -193,35 +193,35 @@ def power_bcra4f3(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: float
+    K : float
         Harmonic mean of level 3 units across level 4 units (or simple average)
-    L: int
+    L : int
         Number of level 4 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 3 units randomly assigned to the treatment within level 4 units
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    r23: float, default=0
+    r23 : float, default=0
         Proportion of level 3 variance in the outcome explained by level 3 covariates
-    g3: int, default=0
+    g3 : int, default=0
         Number of covariates at level 3
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -285,45 +285,45 @@ def power_bcra4r2(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    rho4: float
+    rho4 : float
         Proportion of variance in the outcome between level 4 untis (unconditional ICC4)
-    omega3: float
+    omega3 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 3 units to the residual
         variance at level 3
-    omega4: float
+    omega4 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 4 units to the residual
         variance at level 4
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: float
+    K : float
         Harmonic mean of level 3 units across level 4 units (or simple average)
-    L: int
+    L : int
         Number of level 4 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 2 units randomly assignewd to treatment within level 3 units
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    r2t3: float, default=0
+    r2t3 : float, default=0
         Proportion of treatment effect variance among level 3 units explained by level 3 covariates
-    r2t4: float, default=0
+    r2t4 : float, default=0
         Proportion of treatment effect variance among level 4 units explained by level 4 covariates
-    g4: int
+    g4 : int
         Number of covariates at level 4
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -387,42 +387,42 @@ def power_bcra4r3(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    rho4: float
+    rho4 : float
         Proportion of variance in the outcome between level 4 units (unconditional ICC4)
-    omega4: float
+    omega4 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 4 units to the residual
         variance at level 4
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: float
+    K : float
         Harmonic mean of level 3 units across level 4 units (or simple average)
-    L: int
+    L : int
         Number of level 4 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 3 units randomly assigned to treatment within level 4 units
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    r23: float, default=0
+    r23 : float, default=0
         Proportion of level 3 variance in the outcome explained by level 3 covariates
-    r2t4: float, default=0
+    r2t4 : float, default=0
         Proportion of treatment effect variance among level 4 units explained by level 4 covariates
-    g4: int, default=0
+    g4 : int, default=0
         Number of covariates at level 4
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -477,23 +477,23 @@ def power_bira2c1(
 
     Parameters
     ----------
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Statistical power
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 1 units randomly assigned to treatment within level 2 units
-    g1: int, default=0
+    g1 : int, default=0
         Number of covariates at level 1
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -543,23 +543,23 @@ def power_bira2f1(
 
     Parameters
     ----------
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 1 units randomly assigned to treatment within level 2 units
-    g1: int, default=0
+    g1 : int, default=0
         Number of covariates at level 1
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -612,30 +612,30 @@ def power_bira2r1(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    omega2: float
+    omega2 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 2 units to the residual
         variance at level 2
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effecet size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 1 units randomly assigned to treatment within level 2 units
-    g2: int, default=0
+    g2 : int, default=0
         Number of covariates at level 2
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r2t2: float, default=0
+    r2t2 : float, default=0
         Proportion of treatment effect variance among level 2 units explained by level 2 covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -693,39 +693,39 @@ def power_bira3r1(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    omega2: float
+    omega2 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 2 units to the residual
         variance at level 2
-    omega3: float
+    omega3 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 3 units to the residual
         variance at level 3
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: int
+    K : int
         Number of level 3 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 1 units randomly assigned to treatment within level 2 units
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r2t2: float, default=0
+    r2t2 : float, default=0
         Proportion of treatment effect variance among level 2 units explained by level 2 covariates
-    r2t3: float, default=0
+    r2t3 : float, default=0
         Proportion of treatment effect variance among level 3 units explaiend by level 3 covariates
-    g3: int, default=0
+    g3 : int, default=0
         Number of covariates at level 3
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -790,48 +790,48 @@ def power_bira4r1(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    rho4: float
+    rho4 : float
         Proportion of variance in the outcome between level 4 units (unconditional ICC4)
-    omega2: float
+    omega2 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 2 units to the residual
         variance at level 2
-    omega3: float
+    omega3 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 3 units to the residual
         variance at level 3
-    omega4: float
+    omega4 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 4 units to the residual
         variance at level 4
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: float
+    K : float
         Harmonic mean of level 3 units across level 4 units (or simple average)
-    L: int
+    L : int
         Number of level 4 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Average proportion of level 1 units randomly assigned to treatment within level 2 units
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r2t2: float, default=0
+    r2t2 : float, default=0
         Proportion of treatment effect variance among level 2 units explained by level 2 covariates
-    r2t3: float, default=0
+    r2t3 : float, default=0
         Proportion of treatment effect variance among level 3 units explained by level 3 covariates
-    r2t4: float, default=0
+    r2t4 : float, default=0
         Proportion of treatment effect variance among level 4 units explained by level 4 covariates
-    g4: int, default=0
+    g4 : int, default=0
         Number of covariates at level 4
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -888,27 +888,27 @@ def power_cra2r2(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Proportion of level 2 units randomly assigned to treatment
-    g2: int, default=0
+    g2 : int, default=0
         Number of covariates at level 2
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -966,33 +966,33 @@ def power_cra3r3(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: int
+    K : int
         Level 3 sample size
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0
+    p : float, default=0
         Proportion of level 3 units randomly assigned to treatment
-    g3: int, default=0
+    g3 : int, default=0
         Number of covariates at level 3
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    r23: float, default=0
+    r23 : float, default=0
         Proportion of level 3 variance in the outcome explained by level 3 covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -1053,39 +1053,39 @@ def power_cra4r4(
 
     Parameters
     ----------
-    rho2: float
+    rho2 : float
         Proportion of variance in the outcome between level 2 units (unconditional ICC2)
-    rho3: float
+    rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
-    rho4: float
+    rho4 : float
         Proportion of variance in the outcome between level 4 units (unconditional ICC4)
-    n: float
+    n : float
         Harmonic mean of level 1 units across level 2 units (or simple average)
-    J: float
+    J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
-    K: float
+    K : float
         Harmonic mean of level 3 units across level 4 units (or simple average)
-    L: int
+    L : int
         Number of level 4 units
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Proportion of level 4 units randomly assigned to treatment
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
-    r22: float, default=0
+    r22 : float, default=0
         Proportion of level 2 variance in the outcome explained by level 2 covariates
-    r23: float, default=0
+    r23 : float, default=0
         Proportion of level 3 variance in the outcome explained by level 3 covariates
-    r24: float, default=0
+    r24 : float, default=0
         Proportion of level 4 variance in the outcome explained by level 4 covariates
-    g4: int, default=0
+    g4 : int, default=0
         Number of covariates at level 4
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
@@ -1138,21 +1138,21 @@ def power_ira1r1(
 
     Parameters
     ----------
-    n: int
+    n : int
         Sample size
-    effect_size: float, default=0.25
+    effect_size : float, default=0.25
         Effect size
-    alpha: float, default=0.10
+    alpha : float, default=0.10
         Probability of Type 1 error
-    two_tailed: bool, default=True
+    two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    p: float, default=0.50
+    p : float, default=0.50
         Proportion of units randomly assigned to treatment
-    g1: int, default=0
+    g1 : int, default=0
         Number of covariates
-    r21: float, default=0
+    r21 : float, default=0
         Proportion of variance in the outcome explained by covariates
-    print_pretty: bool, default=True
+    print_pretty : bool, default=True
         Whether we wish to print the results similar to PowerUpR's output
 
     Returns
