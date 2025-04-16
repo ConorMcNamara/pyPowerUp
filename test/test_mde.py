@@ -236,3 +236,6 @@ def test_ira1r1() -> None:
     assert result['minimum_detectable_effect'] == pytest.approx(0.356, abs=0.001)
     assert result['95% Confidence Interval'][0] == pytest.approx(0.107, abs=0.001)
     assert result['95% Confidence Interval'][1] == pytest.approx(0.605, abs=0.001)
+
+if __name__ == "__main__":
+    pytest.main()

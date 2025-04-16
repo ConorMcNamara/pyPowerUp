@@ -18,6 +18,9 @@ def test_bcra3f2() -> None:
     # Two-tailed test: TRUE
     assert result == pytest.approx(0.803, abs=0.001)
 
+if __name__ == "__main__":
+    pytest.main()
+
 
 def test_bcra3r2() -> None:
     result = power.power_bcra3r2(effect_size=.246, rho3=.13, rho2=.10, omega3=.4, n=10, J=6, K=24, alpha=0.05)

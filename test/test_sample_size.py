@@ -120,3 +120,7 @@ def test_ira1r1() -> None:
     #
     # n = 250
     assert result == pytest.approx(250, abs=1)
+
+
+if __name__ == "__main__":
+    pytest.main()
