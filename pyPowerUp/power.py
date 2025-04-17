@@ -4,18 +4,18 @@ from pyPowerUp.utils import _power
 
 
 def power_bcra3f2(
-        rho2: float,
-        n: float,
-        J: float,
-        K: float,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g2: int = 0,
-        r21: float = 0,
-        r22: float = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    n: float,
+    J: float,
+    K: float,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g2: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 2
@@ -53,51 +53,48 @@ def power_bcra3f2(
     """
 
     df = ceil(K * (J - 2) - g2)
-    sse = sqrt(
-        rho2 * (1 - r22) / (p * (1 - p) * J * K)
-        + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n)
-    )
+    sse = sqrt(rho2 * (1 - r22) / (p * (1 - p) * J * K) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bcra3r2(
-        rho2: float,
-        rho3: float,
-        omega3: float,
-        n: float,
-        J: float,
-        K: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g3: int = 0,
-        r21: float = 0,
-        r22: float = 0,
-        r2t3: float = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    omega3: float,
+    n: float,
+    J: float,
+    K: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g3: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    r2t3: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Three-Level Blocked Cluster-level Random Assignment Design,
     Treatment at Level 2
@@ -149,44 +146,44 @@ def power_bcra3r2(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bcra4f3(
-        rho2: float,
-        rho3: float,
-        n: int,
-        J: int,
-        K: int,
-        L: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        r21: float = 0,
-        r22: float = 0,
-        r23: float = 0,
-        g3: int = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    n: int,
+    J: int,
+    K: int,
+    L: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    r21: float = 0,
+    r22: float = 0,
+    r23: float = 0,
+    g3: int = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 3
@@ -237,48 +234,48 @@ def power_bcra4f3(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bcra4r2(
-        rho2: float,
-        rho3: float,
-        rho4: float,
-        omega3: float,
-        omega4: float,
-        n: int,
-        J: int,
-        K: int,
-        L: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        r21: float = 0,
-        r22: float = 0,
-        r2t3: float = 0,
-        r2t4: float = 0,
-        g4: int = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    rho4: float,
+    omega3: float,
+    omega4: float,
+    n: int,
+    J: int,
+    K: int,
+    L: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    r21: float = 0,
+    r22: float = 0,
+    r2t3: float = 0,
+    r2t4: float = 0,
+    g4: int = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
     at Level 2
@@ -340,47 +337,47 @@ def power_bcra4r2(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bcra4r3(
-        rho2: float,
-        rho3: float,
-        rho4: float,
-        omega4: float,
-        n: float,
-        J: float,
-        K: int,
-        L: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        r21: float = 0,
-        r22: float = 0,
-        r23: float = 0,
-        r2t4: float = 0,
-        g4: int = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    rho4: float,
+    omega4: float,
+    n: float,
+    J: float,
+    K: int,
+    L: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    r21: float = 0,
+    r22: float = 0,
+    r23: float = 0,
+    r2t4: float = 0,
+    g4: int = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
      at Level 3
@@ -439,38 +436,38 @@ def power_bcra4r3(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bira2c1(
-        n: float,
-        J: float,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g1: int = 0,
-        r21: float = 0,
-        print_pretty: bool = True,
+    n: float,
+    J: float,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g1: int = 0,
+    r21: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Two-Level Blocked (Constant Treatment Effect) Individual-level
     Random Assignment Design, Treatment at Level 1
@@ -505,38 +502,38 @@ def power_bira2c1(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bira2f1(
-        n: int,
-        J: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g1: int = 0,
-        r21: float = 0,
-        print_pretty: bool = True,
+    n: int,
+    J: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g1: int = 0,
+    r21: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -571,41 +568,41 @@ def power_bira2f1(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bira2r1(
-        rho2: float,
-        omega2: float,
-        n: float,
-        J: float,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g2: int = 0,
-        r21: float = 0,
-        r2t2: float = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    omega2: float,
+    n: float,
+    J: float,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g2: int = 0,
+    r21: float = 0,
+    r2t2: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Two-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -643,51 +640,49 @@ def power_bira2r1(
     The power of our test
     """
     df = ceil(J - g2 - 1)
-    sse = sqrt(
-        rho2 * omega2 * (1 - r2t2) / J + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
-    )
+    sse = sqrt(rho2 * omega2 * (1 - r2t2) / J + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bira3r1(
-        rho2: float,
-        rho3: float,
-        omega2: float,
-        omega3: float,
-        n: float,
-        J: float,
-        K: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        r21: float = 0,
-        r2t2: float = 0,
-        r2t3: float = 0,
-        g3: int = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    omega2: float,
+    omega3: float,
+    n: float,
+    J: float,
+    K: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    r21: float = 0,
+    r2t2: float = 0,
+    r2t3: float = 0,
+    g3: int = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Three-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1
 
@@ -741,49 +736,49 @@ def power_bira3r1(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_bira4r1(
-        rho2: float,
-        rho3: float,
-        rho4: float,
-        omega2: float,
-        omega3: float,
-        omega4: float,
-        n: float,
-        J: float,
-        K: int,
-        L: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        r21: float = 0,
-        r2t2: float = 0,
-        r2t3: float = 0,
-        r2t4: float = 0,
-        g4: int = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    rho4: float,
+    omega2: float,
+    omega3: float,
+    omega4: float,
+    n: float,
+    J: float,
+    K: int,
+    L: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    r21: float = 0,
+    r2t2: float = 0,
+    r2t3: float = 0,
+    r2t4: float = 0,
+    g4: int = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Four-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
@@ -848,40 +843,40 @@ def power_bira4r1(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_cra2r2(
-        rho2: float,
-        n: float,
-        J: float,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g2: int = 0,
-        r21: float = 0,
-        r22: float = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    n: float,
+    J: float,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g2: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Two-level Cluster-randomized Trials to Detect Main, Moderation and
     Mediation Effects
@@ -916,50 +911,47 @@ def power_cra2r2(
     The power of our test
     """
     df = ceil(J - g2 - 2)
-    sse = sqrt(
-        rho2 * (1 - r22) / (p * (1 - p) * J)
-        + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
-    )
+    sse = sqrt(rho2 * (1 - r22) / (p * (1 - p) * J) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_cra3r3(
-        rho2: float,
-        rho3: float,
-        n: float,
-        J: float,
-        K: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g3: int = 0,
-        r21: float = 0,
-        r22: float = 0,
-        r23: float = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    n: float,
+    J: float,
+    K: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g3: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    r23: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Three-level Cluster-randomized Trials to Detect Main, Moderation,
     and Mediation Effects
@@ -1008,46 +1000,46 @@ def power_cra3r3(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_cra4r4(
-        rho2: float,
-        rho3: float,
-        rho4: float,
-        n: float,
-        J: float,
-        K: float,
-        L: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        r21: float = 0,
-        r22: float = 0,
-        r23: float = 0,
-        r24: float = 0,
-        g4: int = 0,
-        print_pretty: bool = True,
+    rho2: float,
+    rho3: float,
+    rho4: float,
+    n: float,
+    J: float,
+    K: float,
+    L: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    r21: float = 0,
+    r22: float = 0,
+    r23: float = 0,
+    r24: float = 0,
+    g4: int = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Four-Level Cluster-randomized Trial
 
@@ -1102,37 +1094,37 @@ def power_cra4r4(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power
 
 
 def power_ira1r1(
-        n: int,
-        effect_size: float = 0.25,
-        alpha: float = 0.10,
-        two_tailed: bool = True,
-        p: float = 0.50,
-        g1: int = 0,
-        r21: float = 0,
-        print_pretty: bool = True,
+    n: int,
+    effect_size: float = 0.25,
+    alpha: float = 0.10,
+    two_tailed: bool = True,
+    p: float = 0.50,
+    g1: int = 0,
+    r21: float = 0,
+    print_pretty: bool = True,
 ) -> float:
     """Calculates the power of a Individual-level Random Assignment Design
 
@@ -1164,23 +1156,23 @@ def power_ira1r1(
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
         str_print = (
-                "Statistical Power"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f" {round(power, 3)}"
-                + "\n"
-                + "-" * 39
-                + "\n"
-                + f"Degrees of Freedom: {df}"
-                + "\n"
-                + f"Standardized Standard Error: {round(sse, 3)}"
-                + "\n"
-                + f"Type I Error Rate: {round(alpha, 2)}"
-                + "\n"
-                + f"Type II Error Rate: {round(1 - power, 3)}"
-                + "\n"
-                + f"Two-Tailed Test: {two_tailed}"
+            "Statistical Power"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f" {round(power, 3)}"
+            + "\n"
+            + "-" * 39
+            + "\n"
+            + f"Degrees of Freedom: {df}"
+            + "\n"
+            + f"Standardized Standard Error: {round(sse, 3)}"
+            + "\n"
+            + f"Type I Error Rate: {round(alpha, 2)}"
+            + "\n"
+            + f"Type II Error Rate: {round(1 - power, 3)}"
+            + "\n"
+            + f"Two-Tailed Test: {two_tailed}"
         )
         print(str_print)
     return power

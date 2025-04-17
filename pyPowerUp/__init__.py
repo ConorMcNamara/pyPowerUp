@@ -6,12 +6,7 @@ from typing import List
 
 from pyPowerUp import mde, power, sample_size, utils
 
-__all__: List[str] = [
-    "mde",
-    "power",
-    "sample_size",
-    "utils"
-]
+__all__: List[str] = ["mde", "power", "sample_size", "utils"]
 
 
 def __dir__() -> List[str]:
