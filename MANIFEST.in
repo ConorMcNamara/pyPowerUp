@@ -1,0 +1,15 @@
+# Include important metadata files
+include README.md
+include LICENSE
+include pyproject.toml
+
+# Include type hints marker
+include pyPowerUp/py.typed
+
+# Exclude unnecessary files
+exclude .gitignore
+exclude .pre-commit-config.yaml
+recursive-exclude * __pycache__
+recursive-exclude * *.py[co]
+recursive-exclude test *
+recursive-exclude .github *

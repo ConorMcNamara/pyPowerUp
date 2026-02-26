@@ -1,6 +1,25 @@
-from math import sqrt, ceil
+"""Power analysis functions for multilevel randomized experiments."""
+
+from math import ceil, sqrt
 
 from pyPowerUp.utils import _power
+
+__all__ = [
+    "power_bcra3f2",
+    "power_bcra3r2",
+    "power_bcra4f3",
+    "power_bcra4r2",
+    "power_bcra4r3",
+    "power_bira2c1",
+    "power_bira2f1",
+    "power_bira2r1",
+    "power_bira3r1",
+    "power_bira4r1",
+    "power_cra2r2",
+    "power_cra3r3",
+    "power_cra4r4",
+    "power_ira1r1",
+]
 
 
 def power_bcra3f2(
@@ -287,7 +306,7 @@ def power_bcra4r2(
     rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
     rho4 : float
-        Proportion of variance in the outcome between level 4 untis (unconditional ICC4)
+        Proportion of variance in the outcome between level 4 units (unconditional ICC4)
     omega3 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 3 units to the residual
         variance at level 3
@@ -309,7 +328,7 @@ def power_bcra4r2(
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
     p : float, default=0.50
-        Average proportion of level 2 units randomly assignewd to treatment within level 3 units
+        Average proportion of level 2 units randomly assigned to treatment within level 3 units
     r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
     r22 : float, default=0
@@ -619,7 +638,7 @@ def power_bira2r1(
     J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
     effect_size : float, default=0.25
-        Effecet size
+        Effect size
     alpha : float, default=0.10
         Probability of Type 1 error
     two_tailed : bool, default=True
@@ -717,7 +736,7 @@ def power_bira3r1(
     r2t2 : float, default=0
         Proportion of treatment effect variance among level 2 units explained by level 2 covariates
     r2t3 : float, default=0
-        Proportion of treatment effect variance among level 3 units explaiend by level 3 covariates
+        Proportion of treatment effect variance among level 3 units explained by level 3 covariates
     g3 : int, default=0
         Number of covariates at level 3
     print_pretty : bool, default=True

@@ -254,4 +254,21 @@ pip-selfcheck.json
 # Settings
 settings.json
 
+# Ruff
+.ruff_cache/
+
+# uv
+.uv/
+
+# Build tools
+*.whl
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Generated files (use pyproject.toml instead)
+requirements.txt
+
 # End of https://www.toptal.com/developers/gitignore/api/python,r,virtualenv,visualstudiocode

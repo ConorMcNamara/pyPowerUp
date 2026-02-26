@@ -1,9 +1,27 @@
+"""Sample size calculation functions for multilevel randomized experiments."""
+
 from math import ceil
 from typing import Optional
 
+import numpy as np
 from scipy.stats import t as t_dist
 
-import numpy as np
+__all__ = [
+    "sample_size_bcra3f2",
+    "sample_size_bcra3r2",
+    "sample_size_bcra4f3",
+    "sample_size_bcra4r2",
+    "sample_size_bcra4r3",
+    "sample_size_bira2c1",
+    "sample_size_bira2f1",
+    "sample_size_bira2r1",
+    "sample_size_bira3r1",
+    "sample_size_bira4r1",
+    "sample_size_cra2r2",
+    "sample_size_cra3r3",
+    "sample_size_cra4r4",
+    "sample_size_ira1r1",
+]
 
 
 def sample_size_bcra3f2(
@@ -34,7 +52,7 @@ def sample_size_bcra3f2(
     J : float
         Harmonic mean of level 2 units across level 3 units (or simple average)
     effect_size : float, default=0.25
-        The effecet size
+        The effect size
     power : float, default=0.80
         The power of our test
     alpha : float, default=0.10
@@ -284,7 +302,7 @@ def sample_size_bcra4r2(
     rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
     rho4 : float
-        Proportion of variance in the outcome between level 4 untis (unconditional ICC4)
+        Proportion of variance in the outcome between level 4 units (unconditional ICC4)
     omega3 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 3 units to the residual
         variance at level 3
@@ -310,7 +328,7 @@ def sample_size_bcra4r2(
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
     p : float, default=0.5
-        Average proportion of level 2 units randomly assignewd to treatment within level 3 units
+        Average proportion of level 2 units randomly assigned to treatment within level 3 units
     r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
     r22 : float, default=0
@@ -515,7 +533,7 @@ def sample_size_bira2f1(
     alpha: float = 0.05,
     two_tailed: bool = True,
     J0: int = 10,
-    tol: bool = 0.10,
+    tol: float = 0.10,
     p: float = 0.50,
     g1: int = 0,
     r21: float = 0,
@@ -579,7 +597,7 @@ def sample_size_bira2r1(
     alpha: float = 0.05,
     two_tailed: bool = True,
     J0: int = 10,
-    tol: bool = 0.10,
+    tol: float = 0.10,
     p: float = 0.50,
     g2: int = 0,
     r21: float = 0,
@@ -701,7 +719,7 @@ def sample_size_bira3r1(
     r2t2 : float, default=0
         Proportion of treatment effect variance among level 2 units explained by level 2 covariates
     r2t3 : float, default=0
-        Proportion of treatment effect variance among level 3 units explaiend by level 3 covariates
+        Proportion of treatment effect variance among level 3 units explained by level 3 covariates
     g3 : int, default=0
         Number of covariates at level 3
     print_pretty : bool, default=True

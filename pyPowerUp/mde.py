@@ -1,7 +1,26 @@
-from math import sqrt, ceil
+"""Minimum detectable effect size calculation functions for multilevel randomized experiments."""
+
+from math import ceil, sqrt
 from typing import Dict
 
 from pyPowerUp.utils import _mde
+
+__all__ = [
+    "mde_bcra3f2",
+    "mde_bcra3r2",
+    "mde_bcra4f3",
+    "mde_bcra4r2",
+    "mde_bcra4r3",
+    "mde_bira2c1",
+    "mde_bira2f1",
+    "mde_bira2r1",
+    "mde_bira3r1",
+    "mde_bira4r1",
+    "mde_cra2r2",
+    "mde_cra3r3",
+    "mde_cra4r4",
+    "mde_ira1r1",
+]
 
 
 def mde_bcra3f2(
@@ -290,7 +309,7 @@ def mde_bcra4r2(
     rho3 : float
         Proportion of variance in the outcome between level 3 units (unconditional ICC3)
     rho4 : float
-        Proportion of variance in the outcome between level 4 untis (unconditional ICC4)
+        Proportion of variance in the outcome between level 4 units (unconditional ICC4)
     omega3 : float
         Treatment effect heterogeneity as ratio of treatment effect variance among level 3 units to the residual
         variance at level 3
@@ -312,7 +331,7 @@ def mde_bcra4r2(
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
     p : float, default=0.5
-        Average proportion of level 2 units randomly assignewd to treatment within level 3 units
+        Average proportion of level 2 units randomly assigned to treatment within level 3 units
     r21 : float, default=0
         Proportion of level 1 variance in the outcome explained by level 1 covariates
     r22 : float, default=0
@@ -692,7 +711,8 @@ def mde_bira3r1(
     g3: int = 0,
     print_pretty: bool = True,
 ) -> Dict:
-    """Calculates the Minimum Detectable Effect of a
+    """Calculates the Minimum Detectable Effect of a Three-Level Blocked Individual-level Random Assignment Design,
+    Treatment at Level 1
 
     Parameters
     ----------
@@ -725,7 +745,7 @@ def mde_bira3r1(
     r2t2 : float, default=0
         Proportion of treatment effect variance among level 2 units explained by level 2 covariates
     r2t3 : float, default=0
-        Proportion of treatment effect variance among level 3 units explaiend by level 3 covariates
+        Proportion of treatment effect variance among level 3 units explained by level 3 covariates
     g3 : int, default=0
         Number of covariates at level 3
     print_pretty : bool, default=True
