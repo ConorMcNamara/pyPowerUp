@@ -1,9 +1,10 @@
-from typing import Dict
-from scipy.stats import t as t_dist, nct
 from math import sqrt
 
+from scipy.stats import nct
+from scipy.stats import t as t_dist
 
-def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> Dict:
+
+def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> dict:
     """Calculates the mde of the test
 
     Parameters
@@ -65,9 +66,11 @@ def _power(effect_size: float, alpha: float, sse: float, df: float, two_tailed: 
         raise ValueError("degrees of freedom must be at least 1")
     lamda = effect_size / sse
     if two_tailed:
-        power = 1 - nct.cdf(t_dist.isf(alpha / 2, df), df, lamda) + nct.cdf(-t_dist.isf(alpha / 2, df), df, lamda)
+        power = float(
+            1 - nct.cdf(t_dist.isf(alpha / 2, df), df, lamda) + nct.cdf(-t_dist.isf(alpha / 2, df), df, lamda)
+        )
     else:
-        power = 1 - nct.cdf(t_dist.isf(alpha, df), df, lamda)
+        power = float(1 - nct.cdf(t_dist.isf(alpha, df), df, lamda))
     return power
 
 
@@ -150,7 +153,7 @@ def _se_b211(
     return sqrt(var_b211)
 
 
-def _se_a321(rhom3: float, r2m2: float, r2m3: float, p: float, J: float, K: int):
+def _se_a321(rhom3: float, r2m2: float, r2m3: float, p: float, J: float, K: int) -> float:
     var_a321 = (rhom3 * (1 - r2m3) + (1 - rhom3) * (1 - r2m2) / J) / (p * (1 - p) * (K - 5))
     if var_a321 < 0:
         raise ValueError("Variance cannot be less than 0")
@@ -166,7 +169,7 @@ def _se_b321(
     r21: float,
     r22: float,
     r23: float,
-    p: float,
+    _p: float,
     n: int,
     J: float,
     K: int,
@@ -186,7 +189,9 @@ def _se_sobel(x: float, y: float, se_x: float, se_y: float) -> float:
     return sqrt(var_sobel)
 
 
-def _power_sobel(x: float, y: float, se_x: float, se_y: float, alpha: float, two_tailed: bool, df: int = 1e08) -> float:
+def _power_sobel(
+    x: float, y: float, se_x: float, se_y: float, alpha: float, two_tailed: bool, df: int = 100_000_000
+) -> float:
     se_sobel = _se_sobel(x, y, se_x, se_y)
     power = _power(x * y, alpha, se_sobel, df, two_tailed)
     return power

@@ -30,13 +30,11 @@ __email__ = "conor.s.mcnamara@gmail.com"
 from pyPowerUp import mde, power, sample_size, utils
 
 __all__ = [
-    # Modules
+    "__author__",
+    "__email__",
+    "__version__",
     "mde",
     "power",
     "sample_size",
     "utils",
-    # Version info
-    "__version__",
-    "__author__",
-    "__email__",
 ]

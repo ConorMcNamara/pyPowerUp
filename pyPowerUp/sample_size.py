@@ -1,7 +1,6 @@
 """Sample size calculation functions for multilevel randomized experiments."""
 
 from math import ceil
-from typing import Optional
 
 import numpy as np
 from scipy.stats import t as t_dist
@@ -39,7 +38,7 @@ def sample_size_bcra3f2(
     r21: float = 0,
     r22: float = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 2
 
@@ -78,8 +77,8 @@ def sample_size_bcra3f2(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = K0 * (J - 2) - g2
         if df < 0 or np.isinf(df):
             break
@@ -116,7 +115,7 @@ def sample_size_bcra3r2(
     r22: float = 0,
     r2t3: float = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the power of a Three-Level Blocked Cluster-level Random Assignment Design,
     Treatment at Level 2
 
@@ -162,8 +161,8 @@ def sample_size_bcra3r2(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = K0 - g3 - 1
         if df < 0 or np.isinf(df):
             break
@@ -202,7 +201,7 @@ def sample_size_bcra4f3(
     r22: float = 0,
     r23: float = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 3
 
@@ -247,8 +246,8 @@ def sample_size_bcra4f3(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = L0 * (K - 2) - g3
         if df < 0 or np.isinf(df):
             break
@@ -291,7 +290,7 @@ def sample_size_bcra4r2(
     r2t4: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
     at Level 2
 
@@ -346,8 +345,8 @@ def sample_size_bcra4r2(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = L0 - g4 - 1
         if df < 0 or np.isinf(df):
             break
@@ -390,7 +389,7 @@ def sample_size_bcra4r3(
     r2t4: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
      at Level 3
 
@@ -442,8 +441,8 @@ def sample_size_bcra4r3(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = L0 - g4 - 1
         if df < 0 or np.isinf(df):
             break
@@ -460,6 +459,8 @@ def sample_size_bcra4r3(
             break
         L0 = (L1 + L0) / 2
     sample_size = ceil(L0) if df > 0 else None
+    if print_pretty:
+        print(f"L = {sample_size}")
     return sample_size
 
 
@@ -475,7 +476,7 @@ def sample_size_bira2c1(
     g1: int = 0,
     r21: float = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Two-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -508,8 +509,8 @@ def sample_size_bira2c1(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = J0 * (n - 1) - g1 - 1
         if df < 0 or np.isinf(df):
             break
@@ -538,7 +539,7 @@ def sample_size_bira2f1(
     g1: int = 0,
     r21: float = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -571,8 +572,8 @@ def sample_size_bira2f1(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = J0 * (n - 2) - g1
         if df < 0 or np.isinf(df):
             break
@@ -584,7 +585,8 @@ def sample_size_bira2f1(
             break
         J0 = (J1 + J0) / 2
     sample_size = ceil(J0) if df > 0 else None
-    print(f"J = {sample_size}")
+    if print_pretty:
+        print(f"J = {sample_size}")
     return sample_size
 
 
@@ -603,7 +605,7 @@ def sample_size_bira2r1(
     r21: float = 0,
     r2t2: float = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Two-Level Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -643,8 +645,8 @@ def sample_size_bira2r1(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = J0 - g2 - 1
         if df < 0 or np.isinf(df):
             break
@@ -680,7 +682,7 @@ def sample_size_bira3r1(
     r2t3: float = 0,
     g3: int = 0,
     print_pretty: bool = True,
-) -> Optional[int]:
+) -> int | None:
     """Calculates the minimum sample size of a Three-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -729,8 +731,8 @@ def sample_size_bira3r1(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = K0 - g3 - 1
         if df < 0 or np.isinf(df):
             break
@@ -774,7 +776,7 @@ def sample_size_bira4r1(
     r2t4: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Optional[float]:
+) -> float | None:
     """Calculates the minimum sample size of a Four-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -832,8 +834,8 @@ def sample_size_bira4r1(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = L0 - g4 - 1
         if df < 0 or np.isinf(df):
             break
@@ -869,7 +871,7 @@ def sample_size_cra2r2(
     r21: float = 0,
     r22: float = 0,
     print_pretty: bool = True,
-) -> Optional[float]:
+) -> float | None:
     """Calculates the minimum sample size of a Two-level Cluster-randomized Trials to Detect Main, Moderation and
     Mediation Effects
 
@@ -906,8 +908,8 @@ def sample_size_cra2r2(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = J0 - g2 - 2
         if df < 0 or np.isinf(df):
             break
@@ -941,7 +943,7 @@ def sample_size_cra3r3(
     r22: float = 0,
     r23: float = 0,
     print_pretty: bool = True,
-) -> Optional[float]:
+) -> float | None:
     """Calculates the minimum sample size of a Three-level Cluster-randomized Trials to Detect Main, Moderation,
     and Mediation Effects
 
@@ -984,8 +986,8 @@ def sample_size_cra3r3(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = K0 - g3 - 2
         if df < 0 or np.isinf(df):
             break
@@ -1026,7 +1028,7 @@ def sample_size_cra4r4(
     r24: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Optional[float]:
+) -> float | None:
     """Calculates the minimum sample size of a Four-Level Cluster-randomized Trial
 
     Parameters
@@ -1074,8 +1076,8 @@ def sample_size_cra4r4(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = L0 - g4 - 2
         if df < 0 or np.isinf(df):
             break
@@ -1101,14 +1103,14 @@ def sample_size_ira1r1(
     effect_size: float = 0.25,
     power: float = 0.80,
     alpha: float = 0.10,
-    two_tailed=True,
+    two_tailed: bool = True,
     n0: int = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g1: int = 0,
     r21: float = 0,
     print_pretty: bool = True,
-) -> Optional[float]:
+) -> float | None:
     """Calculates the minimum sample size of a Individual-level Random Assignment Design
 
     Parameters
@@ -1138,8 +1140,8 @@ def sample_size_ira1r1(
     -------
     The minimum sample size of our test
     """
-    df = 0
-    for i in range(100):
+    df: float = 0
+    for _i in range(100):
         df = n0 - g1 - 1
         if df < 0 or np.isinf(df):
             break

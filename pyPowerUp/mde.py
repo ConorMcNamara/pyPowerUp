@@ -1,7 +1,6 @@
 """Minimum detectable effect size calculation functions for multilevel randomized experiments."""
 
 from math import ceil, sqrt
-from typing import Dict
 
 from pyPowerUp.utils import _mde
 
@@ -36,7 +35,7 @@ def mde_bcra3f2(
     r21: int = 0,
     r22: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 2
 
@@ -115,7 +114,7 @@ def mde_bcra3r2(
     r22: int = 0,
     r2t3: float = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Three-Level Blocked Cluster-level Random Assignment Design,
     Treatment at Level 2
 
@@ -205,7 +204,7 @@ def mde_bcra4f3(
     r23: int = 0,
     g3: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design,
     Treatment at Level 3
 
@@ -298,7 +297,7 @@ def mde_bcra4r2(
     r2t4: int = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
     at Level 2
 
@@ -401,7 +400,7 @@ def mde_bcra4r3(
     r2t4: int = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
      at Level 3
 
@@ -492,7 +491,7 @@ def mde_bira2c1(
     g1: int = 0,
     r21: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Two-Level Blocked (Constant Treatment Effect) Individual-level
     Random Assignment Design, Treatment at Level 1
 
@@ -559,7 +558,7 @@ def mde_bira2f1(
     g1: int = 0,
     r21: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -629,7 +628,7 @@ def mde_bira2r1(
     r21: int = 0,
     r2t2: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Two-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -710,7 +709,7 @@ def mde_bira3r1(
     r2t3: int = 0,
     g3: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Three-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -808,7 +807,7 @@ def mde_bira4r1(
     r2t4: int = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Four-Level Blocked Individual-level Random Assignment Design,
     Treatment at Level 1
 
@@ -907,7 +906,7 @@ def mde_cra2r2(
     r21: int = 0,
     r22: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Two-level Cluster-randomized Trials to Detect Main, Moderation and
     Mediation Effects
 
@@ -983,7 +982,7 @@ def mde_cra3r3(
     r22: int = 0,
     r23: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Three-level Cluster-randomized Trials to Detect Main, Moderation,
     and Mediation Effects
 
@@ -1072,7 +1071,7 @@ def mde_cra4r4(
     r24: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Four-Level Cluster-randomized Trial
 
     Parameters
@@ -1158,7 +1157,7 @@ def mde_ira1r1(
     g1: int = 0,
     r21: float = 0,
     print_pretty: bool = True,
-) -> Dict:
+) -> dict:
     """Calculates the Minimum Detectable Effect of a Individual-level Random Assignment Design
 
     Parameters
