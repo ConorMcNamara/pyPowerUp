@@ -39,9 +39,9 @@ jobs:
           ruff check .
           ruff format --check .
 
-      - name: Type check with mypy
+      - name: Type check with zuban
         run: |
-          mypy pyPowerUp --ignore-missing-imports
+          zuban check pyPowerUp
         continue-on-error: true
 
       - name: Test with pytest

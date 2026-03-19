@@ -1,10 +1,11 @@
 from math import sqrt
+from typing import Any
 
 from scipy.stats import nct
 from scipy.stats import t as t_dist
 
 
-def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> dict:
+def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> dict[str, Any]:
     """Calculates the mde of the test
 
     Parameters

@@ -35,7 +35,7 @@ Thank you for your interest in contributing to pyPowerUp! This document provides
 This project uses modern Python tooling for code quality:
 
 - **Ruff** for linting and formatting
-- **mypy** for type checking
+- **zuban** for type checking
 - **pytest** for testing
 
 All code must:

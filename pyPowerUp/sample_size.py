@@ -31,7 +31,7 @@ def sample_size_bcra3f2(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    K0: int = 10,
+    K0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g2: int = 0,
@@ -58,7 +58,7 @@ def sample_size_bcra3f2(
         Probability of Type I error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    K0 : int, default=10
+    K0 : float, default=10
         Our initial guess for the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -107,7 +107,7 @@ def sample_size_bcra3r2(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    K0: int = 10,
+    K0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g3: int = 0,
@@ -140,7 +140,7 @@ def sample_size_bcra3r2(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    K0 : int, default=10
+    K0 : float, default=10
         Our initial guess for the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -193,7 +193,7 @@ def sample_size_bcra4f3(
     power: float = 0.80,
     alpha: float = 0.05,
     two_tailed: bool = True,
-    L0: int = 10,
+    L0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g3: int = 0,
@@ -225,7 +225,7 @@ def sample_size_bcra4f3(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    L0 : int, default=10
+    L0 : float, default=10
         Our initial guess of our minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -281,7 +281,7 @@ def sample_size_bcra4r2(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    L0: int = 10,
+    L0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     r21: float = 0,
@@ -322,7 +322,7 @@ def sample_size_bcra4r2(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    L0 : int, default=10
+    L0 : float, default=10
         Our initial guess of our minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -380,7 +380,7 @@ def sample_size_bcra4r3(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    L0: int = 10,
+    L0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     r21: float = 0,
@@ -418,7 +418,7 @@ def sample_size_bcra4r3(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    L0 : int, default=10
+    L0 : float, default=10
         Our initial guess of our minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -470,7 +470,7 @@ def sample_size_bira2c1(
     power: float = 0.80,
     alpha: float = 0.05,
     two_tailed: bool = True,
-    J0: int = 10,
+    J0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g1: int = 0,
@@ -492,7 +492,7 @@ def sample_size_bira2c1(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    J0 : int, default=10
+    J0 : float, default=10
         Our initial guess of the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -533,7 +533,7 @@ def sample_size_bira2f1(
     power: float = 0.80,
     alpha: float = 0.05,
     two_tailed: bool = True,
-    J0: int = 10,
+    J0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g1: int = 0,
@@ -555,7 +555,7 @@ def sample_size_bira2f1(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    J0 : int, default=10
+    J0 : float, default=10
         Our initial guess of the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -598,7 +598,7 @@ def sample_size_bira2r1(
     power: float = 0.80,
     alpha: float = 0.05,
     two_tailed: bool = True,
-    J0: int = 10,
+    J0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g2: int = 0,
@@ -626,7 +626,7 @@ def sample_size_bira2r1(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    J0 : int, default=10
+    J0 : float, default=10
         Our initial guess of the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -674,7 +674,7 @@ def sample_size_bira3r1(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    K0: int = 10,
+    K0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     r21: float = 0,
@@ -710,7 +710,7 @@ def sample_size_bira3r1(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    K0 : int, default=10
+    K0 : float, default=10
         Our initial guess to the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -767,7 +767,7 @@ def sample_size_bira4r1(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    L0: int = 10,
+    L0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     r21: float = 0,
@@ -811,7 +811,7 @@ def sample_size_bira4r1(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    L0 : int, default=10
+    L0 : float, default=10
         Our initial guess to the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -864,7 +864,7 @@ def sample_size_cra2r2(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    J0: int = 10,
+    J0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g2: int = 0,
@@ -889,7 +889,7 @@ def sample_size_cra2r2(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    J0 : int, default=10
+    J0 : float, default=10
         Our initial guess to the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -935,7 +935,7 @@ def sample_size_cra3r3(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    K0: int = 10,
+    K0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g3: int = 0,
@@ -965,7 +965,7 @@ def sample_size_cra3r3(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    K0 : int, default=10
+    K0 : float, default=10
         Our initial guess to the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -1019,7 +1019,7 @@ def sample_size_cra4r4(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    L0: int = 10,
+    L0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     r21: float = 0,
@@ -1053,7 +1053,7 @@ def sample_size_cra4r4(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    L0 : int, default=10
+    L0 : float, default=10
         Our initial guess to the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size
@@ -1104,7 +1104,7 @@ def sample_size_ira1r1(
     power: float = 0.80,
     alpha: float = 0.10,
     two_tailed: bool = True,
-    n0: int = 10,
+    n0: float = 10,
     tol: float = 0.10,
     p: float = 0.50,
     g1: int = 0,
@@ -1123,7 +1123,7 @@ def sample_size_ira1r1(
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
-    n0 : int, default=10
+    n0 : float, default=10
         Our initial guess to the minimum sample size
     tol : float, default=0.10
         Tolerance to end iterative process for finding the minimum sample size

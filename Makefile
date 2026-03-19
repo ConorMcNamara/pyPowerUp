@@ -8,7 +8,7 @@ help:
 	@echo "  make test-cov       Run tests with coverage report"
 	@echo "  make lint           Run linter (ruff)"
 	@echo "  make format         Format code with ruff"
-	@echo "  make type-check     Run type checker (mypy)"
+	@echo "  make type-check     Run type checker (zuban)"
 	@echo "  make clean          Remove build artifacts and cache files"
 	@echo "  make build          Build distribution packages"
 	@echo "  make publish        Publish to PyPI (requires credentials)"
@@ -37,14 +37,14 @@ format:
 	ruff check --fix .
 
 type-check:
-	mypy pyPowerUp --ignore-missing-imports
+	zuban check pyPowerUp
 
 clean:
 	rm -rf build/
 	rm -rf dist/
 	rm -rf *.egg-info
 	rm -rf .pytest_cache/
-	rm -rf .mypy_cache/
+	rm -rf .zuban_cache/
 	rm -rf .ruff_cache/
 	rm -rf htmlcov/
 	rm -rf .coverage

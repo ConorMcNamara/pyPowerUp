@@ -127,7 +127,7 @@ ruff format .
 ruff check .
 
 # Type check
-mypy pyPowerUp
+zuban check pyPowerUp
 ```
 
 ## References
