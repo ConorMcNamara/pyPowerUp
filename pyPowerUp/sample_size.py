@@ -82,8 +82,8 @@ def sample_size_bcra3f2(
         df = K0 * (J - 2) - g2
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
             rho2 * (1 - r22) / (p * (1 - p) * J) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n)
@@ -166,8 +166,8 @@ def sample_size_bcra3r2(
         df = K0 - g3 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
             rho3 * omega3 * (1 - r2t3)
@@ -251,8 +251,8 @@ def sample_size_bcra4f3(
         df = L0 * (K - 2) - g3
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
             rho3 * (1 - r23) / (p * (1 - p) * K)
@@ -350,8 +350,8 @@ def sample_size_bcra4r2(
         df = L0 - g4 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
             rho4 * omega4 * (1 - r2t4)
@@ -446,8 +446,8 @@ def sample_size_bcra4r3(
         df = L0 - g4 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
             rho4 * omega4 * (1 - r2t4)
@@ -514,8 +514,8 @@ def sample_size_bira2c1(
         df = J0 * (n - 1) - g1 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         J1 = pow(M / effect_size, 2) * ((1 - r21) / (p * (1 - p) * n))
         if abs(J1 - J0) < tol:
@@ -577,8 +577,8 @@ def sample_size_bira2f1(
         df = J0 * (n - 2) - g1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         J1 = pow(M / effect_size, 2) * ((1 - r21) / (p * (1 - p) * n))
         if abs(J1 - J0) < tol:
@@ -650,8 +650,8 @@ def sample_size_bira2r1(
         df = J0 - g2 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         J1 = pow(M / effect_size, 2) * (rho2 * omega2 * (1 - r2t2) + (1 - rho2) * (1 - r21) / (p * (1 - p) * n))
         if abs(J1 - J0) < tol:
@@ -736,8 +736,8 @@ def sample_size_bira3r1(
         df = K0 - g3 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
             rho3 * omega3 * (1 - r2t3)
@@ -839,8 +839,8 @@ def sample_size_bira4r1(
         df = L0 - g4 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
             rho4 * omega4 * (1 - r2t4)
@@ -913,8 +913,8 @@ def sample_size_cra2r2(
         df = J0 - g2 - 2
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         J1 = pow(M / effect_size, 2) * (rho2 * (1 - r22) / (p * (1 - p)) + (1 - rho2) * (1 - r21) / (p * (1 - p) * n))
         if abs(J1 - J0) < tol:
@@ -991,8 +991,8 @@ def sample_size_cra3r3(
         df = K0 - g3 - 2
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         K1 = pow(M / effect_size, 2) * (
             rho3 * (1 - r23) / (p * (1 - p))
@@ -1081,8 +1081,8 @@ def sample_size_cra4r4(
         df = L0 - g4 - 2
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         L1 = pow(M / effect_size, 2) * (
             rho4 * (1 - r24) / (p * (1 - p))
@@ -1145,8 +1145,8 @@ def sample_size_ira1r1(
         df = n0 - g1 - 1
         if df < 0 or np.isinf(df):
             break
-        T1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-        T2 = abs(t_dist.ppf(power, df))
+        T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+        T2 = abs(float(t_dist.ppf(power, df)))
         M = T1 + T2 if power >= 0.5 else T1 - T2
         n1 = pow(M / effect_size, 2) * ((1 - r21) / (p * (1 - p)))
         if abs(n1 - n0) < tol:

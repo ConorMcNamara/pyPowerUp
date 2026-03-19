@@ -29,8 +29,8 @@ def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> d
         raise ValueError("Sum of Squared Error cannot be less than 0")
     if df < 1:
         raise ValueError("degrees of freedom must be at least 1")
-    t1 = abs(t_dist.ppf(alpha / 2, df)) if two_tailed else abs(t_dist.ppf(alpha, df))
-    t2 = abs(t_dist.ppf(power, df))
+    t1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
+    t2 = abs(float(t_dist.ppf(power, df)))
     m = t1 + t2 if power >= 0.5 else t1 - t2
     mde = m * sse
     lower_bound = mde * (1 - t1 / m)
@@ -67,11 +67,10 @@ def _power(effect_size: float, alpha: float, sse: float, df: float, two_tailed: 
         raise ValueError("degrees of freedom must be at least 1")
     lamda = effect_size / sse
     if two_tailed:
-        power = float(
-            1 - nct.cdf(t_dist.isf(alpha / 2, df), df, lamda) + nct.cdf(-t_dist.isf(alpha / 2, df), df, lamda)
-        )
+        isf_half = float(t_dist.isf(alpha / 2, df))
+        power = 1 - float(nct.cdf(isf_half, df, lamda)) + float(nct.cdf(-isf_half, df, lamda))
     else:
-        power = float(1 - nct.cdf(t_dist.isf(alpha, df), df, lamda))
+        power = 1 - float(nct.cdf(float(t_dist.isf(alpha, df)), df, lamda))
     return power
 
 
