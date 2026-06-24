@@ -37,8 +37,7 @@ def mde_bcra3f2(
     r22: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design,
-    Treatment at Level 2
+    """Calculate the Minimum Detectable Effect of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design, Treatment at Level 2.
 
     Parameters
     ----------
@@ -116,8 +115,7 @@ def mde_bcra3r2(
     r2t3: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Three-Level Blocked Cluster-level Random Assignment Design,
-    Treatment at Level 2
+    """Calculate the Minimum Detectable Effect of a Three-Level Blocked Cluster-level Random Assignment Design, Treatment at Level 2.
 
     Parameters
     ----------
@@ -206,8 +204,7 @@ def mde_bcra4f3(
     g3: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design,
-    Treatment at Level 3
+    """Calculate the Minimum Detectable Effect of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design, Treatment at Level 3.
 
     Parameters
     ----------
@@ -299,8 +296,7 @@ def mde_bcra4r2(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
-    at Level 2
+    """Calculate the Minimum Detectable Effect of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment at Level 2.
 
     Parameters
     ----------
@@ -402,8 +398,7 @@ def mde_bcra4r3(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
-     at Level 3
+    """Calculate the Minimum Detectable Effect of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment at Level 3.
 
     Parameters
     ----------
@@ -493,8 +488,7 @@ def mde_bira2c1(
     r21: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Two-Level Blocked (Constant Treatment Effect) Individual-level
-    Random Assignment Design, Treatment at Level 1
+    """Calculate the Minimum Detectable Effect of a Two-Level Blocked (Constant Treatment Effect) Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -560,8 +554,7 @@ def mde_bira2f1(
     r21: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design,
-    Treatment at Level 1
+    """Calculate the Minimum Detectable Effect of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -630,8 +623,7 @@ def mde_bira2r1(
     r2t2: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Two-Level Blocked Individual-level Random Assignment Design,
-    Treatment at Level 1
+    """Calculate the Minimum Detectable Effect of a Two-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -711,8 +703,7 @@ def mde_bira3r1(
     g3: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Three-Level Blocked Individual-level Random Assignment Design,
-    Treatment at Level 1
+    """Calculate the Minimum Detectable Effect of a Three-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -809,8 +800,7 @@ def mde_bira4r1(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Four-Level Blocked Individual-level Random Assignment Design,
-    Treatment at Level 1
+    """Calculate the Minimum Detectable Effect of a Four-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -908,8 +898,7 @@ def mde_cra2r2(
     r22: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Two-level Cluster-randomized Trials to Detect Main, Moderation and
-    Mediation Effects
+    """Calculate the Minimum Detectable Effect of a Two-level Cluster-randomized Trials to Detect Main, Moderation and Mediation Effects.
 
     Parameters
     ----------
@@ -984,8 +973,7 @@ def mde_cra3r3(
     r23: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Three-level Cluster-randomized Trials to Detect Main, Moderation,
-    and Mediation Effects
+    """Calculate the Minimum Detectable Effect of a Three-level Cluster-randomized Trials to Detect Main, Moderation, and Mediation Effects.
 
     Parameters
     ----------
@@ -1073,7 +1061,7 @@ def mde_cra4r4(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Four-Level Cluster-randomized Trial
+    """Calculate the Minimum Detectable Effect of a Four-Level Cluster-randomized Trial.
 
     Parameters
     ----------
@@ -1159,7 +1147,7 @@ def mde_ira1r1(
     r21: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
-    """Calculates the Minimum Detectable Effect of a Individual-level Random Assignment Design
+    """Calculate the Minimum Detectable Effect of a Individual-level Random Assignment Design.
 
     Parameters
     ----------

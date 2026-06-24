@@ -1,3 +1,5 @@
+"""Internal helper functions for computing minimum detectable effect and statistical power."""
+
 from math import sqrt
 from typing import Any
 
@@ -6,7 +8,7 @@ from scipy.stats import t as t_dist
 
 
 def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> dict[str, Any]:
-    """Calculates the mde of the test
+    """Calculate the mde of the test.
 
     Parameters
     ----------
@@ -42,7 +44,7 @@ def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> d
 
 
 def _power(effect_size: float, alpha: float, sse: float, df: float, two_tailed: bool) -> float:
-    """Calculates the power of the test
+    """Calculate the power of the test.
 
     Parameters
     ----------
