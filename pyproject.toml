@@ -105,16 +105,22 @@ select = [
     "ARG",    # flake8-unused-arguments
     "PTH",    # flake8-use-pathlib
     "RUF",    # Ruff-specific rules
+    "D",      # pydocstyle (numpy convention, see [tool.ruff.lint.pydocstyle])
 ]
 ignore = [
     "E501",   # line too long (handled by formatter)
     "N803",   # argument name should be lowercase (conflicts with math conventions)
     "N806",   # variable in function should be lowercase (conflicts with math conventions)
     "N999",   # invalid module name (pyPowerUp is intentional branding)
+    "D104",   # missing docstring in public package (__init__.py)
+    "D105",   # missing docstring in magic method
 ]
 
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
 [tool.ruff.lint.per-file-ignores]
-"test/*.py" = ["ARG"]
+"test/*.py" = ["ARG", "D"]
 
 [tool.ruff.format]
 quote-style = "double"

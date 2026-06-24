@@ -36,8 +36,7 @@ def power_bcra3f2(
     r22: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design,
-    Treatment at Level 2
+    """Calculate the power of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design, Treatment at Level 2.
 
     Parameters
     ----------
@@ -70,7 +69,6 @@ def power_bcra3f2(
     -------
     The power of the test
     """
-
     df = ceil(K * (J - 2) - g2)
     sse = sqrt(rho2 * (1 - r22) / (p * (1 - p) * J * K) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
@@ -115,8 +113,7 @@ def power_bcra3r2(
     r2t3: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Three-Level Blocked Cluster-level Random Assignment Design,
-    Treatment at Level 2
+    """Calculate the power of a Three-Level Blocked Cluster-level Random Assignment Design, Treatment at Level 2.
 
     Parameters
     ----------
@@ -204,8 +201,7 @@ def power_bcra4f3(
     g3: int = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design,
-    Treatment at Level 3
+    """Calculate the power of a Four-Level Blocked (Fixed) Cluster-level Random Assignment Design, Treatment at Level 3.
 
     Parameters
     ----------
@@ -296,8 +292,7 @@ def power_bcra4r2(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
-    at Level 2
+    """Calculate the power of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment at Level 2.
 
     Parameters
     ----------
@@ -398,8 +393,7 @@ def power_bcra4r3(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment
-     at Level 3
+    """Calculate the power of a Four-Level Blocked Cluster-level Random Assignment Design, Treatment at Level 3.
 
     Parameters
     ----------
@@ -488,8 +482,7 @@ def power_bira2c1(
     r21: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Two-Level Blocked (Constant Treatment Effect) Individual-level
-    Random Assignment Design, Treatment at Level 1
+    """Calculate the power of a Two-Level Blocked (Constant Treatment Effect) Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -554,8 +547,7 @@ def power_bira2f1(
     r21: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design,
-    Treatment at Level 1
+    """Calculate the power of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -623,8 +615,7 @@ def power_bira2r1(
     r2t2: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Two-Level Blocked Individual-level Random Assignment Design,
-    Treatment at Level 1
+    """Calculate the power of a Two-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -703,7 +694,7 @@ def power_bira3r1(
     g3: int = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Three-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1
+    """Calculate the power of a Three-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -799,8 +790,7 @@ def power_bira4r1(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Four-Level Blocked Individual-level Random Assignment Design,
-    Treatment at Level 1
+    """Calculate the power of a Four-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1.
 
     Parameters
     ----------
@@ -897,8 +887,7 @@ def power_cra2r2(
     r22: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Two-level Cluster-randomized Trials to Detect Main, Moderation and
-    Mediation Effects
+    """Calculate the power of a Two-level Cluster-randomized Trials to Detect Main, Moderation and Mediation Effects.
 
     Parameters
     ----------
@@ -972,8 +961,7 @@ def power_cra3r3(
     r23: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Three-level Cluster-randomized Trials to Detect Main, Moderation,
-    and Mediation Effects
+    """Calculate the power of a Three-level Cluster-randomized Trials to Detect Main, Moderation, and Mediation Effects.
 
     Parameters
     ----------
@@ -1060,7 +1048,7 @@ def power_cra4r4(
     g4: int = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Four-Level Cluster-randomized Trial
+    """Calculate the power of a Four-Level Cluster-randomized Trial.
 
     Parameters
     ----------
@@ -1145,7 +1133,7 @@ def power_ira1r1(
     r21: float = 0,
     print_pretty: bool = True,
 ) -> float:
-    """Calculates the power of a Individual-level Random Assignment Design
+    """Calculate the power of a Individual-level Random Assignment Design.
 
     Parameters
     ----------
