@@ -24,7 +24,9 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.13"
+          # Formatting is version-agnostic; read the floor from pyproject.toml's
+          # requires-python so this never needs manual bumping.
+          python-version-file: pyproject.toml
           cache: 'pip'
 
       - name: Install dependencies

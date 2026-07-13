@@ -1,5 +1,9 @@
 # This workflow will install Python dependencies, run tests and lint with a variety of Python versions
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+#
+# The Python version matrix is NOT hardcoded here. It is derived at runtime from the
+# "Programming Language :: Python :: 3.x" Trove classifiers in pyproject.toml, so adding
+# support for a new Python version only requires editing that single list.
 
 name: CI
 
@@ -10,12 +14,47 @@ on:
     branches: [ "main", "master" ]
 
 jobs:
+  setup:
+    name: Resolve Python versions
+    runs-on: ubuntu-latest
+    outputs:
+      python-versions: ${{ steps.versions.outputs.json }}
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.x"
+
+      - name: Derive supported Python versions from pyproject.toml
+        id: versions
+        run: |
+          python - <<'EOF' >> "$GITHUB_OUTPUT"
+          import json, tomllib
+
+          with open("pyproject.toml", "rb") as f:
+              classifiers = tomllib.load(f)["project"]["classifiers"]
+
+          prefix = "Programming Language :: Python :: 3."
+          versions = sorted(
+              (c.rsplit(" ", 1)[1] for c in classifiers if c.startswith(prefix)),
+              key=lambda v: tuple(int(p) for p in v.split(".")),
+          )
+          if not versions:
+              raise SystemExit("No 'Programming Language :: Python :: 3.x' classifiers found in pyproject.toml")
+
+          print("json=" + json.dumps(versions))
+          EOF
+
   test:
+    needs: setup
     name: Test Python ${{ matrix.python-version }} on ${{ matrix.os }}
     strategy:
       fail-fast: false
       matrix:
-        python-version: ["3.13", "3.14"]
+        python-version: ${{ fromJson(needs.setup.outputs.python-versions) }}
         os: [ubuntu-latest, macos-latest, windows-latest]
     runs-on: ${{ matrix.os }}
 
@@ -49,9 +88,8 @@ jobs:
           pytest --cov=pyPowerUp --cov-report=xml --cov-report=term-missing
 
       - name: Upload coverage to Codecov
-        if: matrix.os == 'ubuntu-latest' && matrix.python-version == '3.13'
+        if: matrix.os == 'ubuntu-latest' && matrix.python-version == fromJson(needs.setup.outputs.python-versions)[0]
         uses: codecov/codecov-action@v4
         with:
           file: ./coverage.xml
           fail_ci_if_error: false
-
