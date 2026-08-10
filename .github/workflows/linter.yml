@@ -21,23 +21,20 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
         with:
-          # Formatting is version-agnostic; read the floor from pyproject.toml's
-          # requires-python so this never needs manual bumping.
-          python-version-file: pyproject.toml
-          cache: 'pip'
+          enable-cache: true
 
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install ruff
+        # Use the project's pinned ruff (from uv.lock) so CI formatting matches
+        # local pre-commit and never drifts from a floating latest release.
+        run: uv sync --extra dev
 
       - name: Format code with Ruff
         run: |
-          ruff format .
-          ruff check --fix .
+          uv run ruff format .
+          uv run ruff check --fix .
 
       - name: Commit and push changes
         run: |

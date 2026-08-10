@@ -13,31 +13,31 @@ help:
 	@echo "  make build          Build distribution packages"
 	@echo "  make publish        Publish to PyPI (requires credentials)"
 	@echo "  make pre-commit     Install and run pre-commit hooks"
-	@echo "  make requirements   Generate requirements.txt from pyproject.toml (legacy support)"
+	@echo "  make requirements   Export requirements.txt from uv.lock (legacy support)"
 	@echo "  make all            Run format, lint, type-check, and test"
 
 install:
-	pip install -e .
+	uv sync
 
 install-dev:
-	pip install -e ".[dev]"
-	pre-commit install
+	uv sync --extra dev
+	uv run pre-commit install
 
 test:
-	pytest -v
+	uv run pytest -v
 
 test-cov:
-	pytest --cov=pyPowerUp --cov-report=html --cov-report=term-missing
+	uv run pytest --cov=pyPowerUp --cov-report=html --cov-report=term-missing
 
 lint:
-	ruff check .
+	uv run ruff check .
 
 format:
-	ruff format .
-	ruff check --fix .
+	uv run ruff format .
+	uv run ruff check --fix .
 
 type-check:
-	zuban check pyPowerUp
+	uv run zuban check pyPowerUp
 
 clean:
 	rm -rf build/
@@ -55,23 +55,18 @@ clean:
 	find . -type f -name '*~' -delete
 
 build: clean
-	python -m build
+	uv build
 
 publish: build
-	python -m twine upload dist/*
+	uv publish
 
 pre-commit:
-	pre-commit install
-	pre-commit run --all-files
+	uv run pre-commit install
+	uv run pre-commit run --all-files
 
 requirements:
-	@echo "# This file is auto-generated from pyproject.toml" > requirements.txt
-	@echo "# To regenerate: make requirements" >> requirements.txt
-	@echo "# For modern Python projects, install directly from pyproject.toml:" >> requirements.txt
-	@echo "#   pip install -e ." >> requirements.txt
-	@echo "" >> requirements.txt
-	@python3 -c "import tomllib; f = open('pyproject.toml', 'rb'); data = tomllib.load(f); deps = data['project']['dependencies']; print('\n'.join(deps))" >> requirements.txt
-	@echo "Generated requirements.txt from pyproject.toml"
+	uv export --no-dev --no-emit-project --format requirements-txt -o requirements.txt
+	@echo "Exported requirements.txt from uv.lock"
 
 all: format lint type-check test
 	@echo "All checks passed!"

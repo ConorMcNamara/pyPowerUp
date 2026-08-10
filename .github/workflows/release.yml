@@ -1,0 +1,68 @@
+# Build and publish pypowerupr to PyPI on a GitHub Release.
+#
+# Uses PyPI Trusted Publishing (OIDC) — no API tokens or secrets are stored in
+# the repository. Before the first run, register this repo as a trusted
+# publisher on PyPI:
+#   https://pypi.org/manage/project/pypowerupr/settings/publishing/
+#   (or the "pending publisher" form if the project does not exist yet)
+# with:
+#   Owner:            ConorMcNamara
+#   Repository:       pyPowerUp
+#   Workflow name:    release.yml
+#   Environment name: pypi
+#
+# Trigger: publishing a GitHub Release. Make sure the tag / release version
+# matches [project].version in pyproject.toml before releasing.
+
+name: Publish to PyPI
+
+on:
+  release:
+    types: [published]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    name: Build distributions
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v5
+        with:
+          enable-cache: true
+
+      - name: Build sdist and wheel
+        run: uv build
+
+      - name: Check distribution metadata
+        run: uvx twine check dist/*
+
+      - name: Upload build artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+  publish:
+    name: Publish to PyPI
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: pypi
+      url: https://pypi.org/project/pypowerupr/
+    permissions:
+      id-token: write  # required for OIDC trusted publishing
+    steps:
+      - name: Download build artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: dist
+          path: dist/
+
+      - name: Publish to PyPI
+        uses: pypa/gh-action-pypi-publish@release/v1

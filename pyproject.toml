@@ -1,26 +1,26 @@
 [project]
-name = "pypowerup"
-version = "1.0.0"
+name = "pypowerupr"
+dynamic = ["version"]
 description = "A Python implementation of PowerUpR for calculating power, sample size, and minimum detectable effect size of multilevel randomized experiments"
 authors = [
     {name = "Conor McNamara", email = "conor.s.mcnamara@gmail.com"}
 ]
 readme = "README.md"
 requires-python = ">=3.13"
-license = {text = "MIT"}
+license = "MIT"
+license-files = ["LICENSE"]
 keywords = ["statistics", "power-analysis", "experimental-design", "sample-size", "effect-size"]
 classifiers = [
     "Development Status :: 4 - Beta",
     "Intended Audience :: Science/Research",
-    "License :: OSI Approved :: MIT License",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3.13",
     "Programming Language :: Python :: 3.14",
     "Topic :: Scientific/Engineering :: Mathematics",
     "Typing :: Typed",
 ]
-# All dependencies are defined here (PEP 621)
-# No requirements.txt needed - use: pip install -e ".[dev]" for development
+# All dependencies are defined here (PEP 621) and locked in uv.lock.
+# For development, use: uv sync --extra dev
 dependencies = [
     "scipy>=1.15.2,<2.0.0",
     "numpy>=1.26.0,<3.0.0",
@@ -28,14 +28,14 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = [
-    "pytest>=8.3.5",
+    "pytest>=9.0.3",
     "pytest-cov>=6.0.0",
     "zuban",
     "ruff>=0.8.0",
     "pre-commit>=4.0.0",
 ]
 test = [
-    "pytest>=8.3.5",
+    "pytest>=9.0.3",
     "pytest-cov>=6.0.0",
 ]
 
@@ -45,8 +45,11 @@ Repository = "https://github.com/ConorMcNamara/pyPowerUp"
 Issues = "https://github.com/ConorMcNamara/pyPowerUp/issues"
 
 [build-system]
-requires = ["setuptools>=75.0.0", "wheel"]
+requires = ["setuptools>=77.0.0", "wheel"]
 build-backend = "setuptools.build_meta"
+
+[tool.setuptools.dynamic]
+version = {attr = "pyPowerUp.__version__"}
 
 [tool.setuptools.packages.find]
 where = ["."]
@@ -77,6 +80,11 @@ warn_unreachable = true
 allow_untyped_globals = false
 check_untyped_defs = false
 follow_untyped_imports = true
+# Allow calling untyped functions (e.g. scipy.stats' ppf/cdf/isf, which ship no
+# type stubs) from our typed code. Because disallow_untyped_defs is enforced,
+# every first-party function is already typed, so this only ever relaxes calls
+# into untyped third-party libraries -- real type errors are still reported.
+disallow_untyped_calls = false
 exclude_gitignore = true
 mode = "default"  # Or "mypy"
 
@@ -90,6 +98,11 @@ untyped_function_return_mode = "inferred"
 line-length = 120
 indent-width = 4
 target-version = "py313"
+# Ruff 0.16+ formats Python code blocks embedded in Markdown by default, which
+# would collapse the intentionally multi-line examples in our docs. The
+# pre-commit ruff hooks only target Python files, so exclude Markdown here to
+# keep `ruff format .` / `ruff check .` (Makefile + CI) consistent with them.
+extend-exclude = ["*.md"]
 
 [tool.ruff.lint]
 select = [

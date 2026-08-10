@@ -17,7 +17,8 @@ repos:
         args: ['--fix=lf']
 
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.8.4
+    # Keep in sync with the ruff version pinned in uv.lock.
+    rev: v0.16.2
     hooks:
       # Run the linter
       - id: ruff
@@ -29,15 +30,10 @@ repos:
     hooks:
       - id: zuban
         name: zuban
-        entry: zuban check
+        # Run through uv so it uses the zuban pinned in uv.lock regardless of
+        # whether a virtualenv is active.
+        entry: uv run zuban check
         language: system
         types: [python]
         pass_filenames: false
-        exclude: ^(test/|docs/)
-
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.3.0
-    hooks:
-      - id: pydocstyle
-        args: [--convention=numpy]
         exclude: ^(test/|docs/)
