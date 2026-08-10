@@ -10,6 +10,7 @@ Thank you for your interest in contributing to pyPowerUp! This document provides
 ### Prerequisites
 
 - Python 3.13 or 3.14
+- [uv](https://docs.astral.sh/uv/) (for dependency management)
 - Git
 
 ### Setting Up Your Development Environment
@@ -21,14 +22,14 @@ Thank you for your interest in contributing to pyPowerUp! This document provides
    cd pyPowerUp
    ```
 
-3. Install development dependencies:
+3. Install development dependencies (creates a `.venv` and installs from `uv.lock`):
    ```bash
-   pip install -e ".[dev]"
+   uv sync --extra dev
    ```
 
 4. Install pre-commit hooks:
    ```bash
-   pre-commit install
+   uv run pre-commit install
    ```
 
 ## Development Workflow
@@ -66,26 +67,24 @@ All code must:
 
 ### Managing Dependencies
 
-This project uses `pyproject.toml` exclusively for dependency management (no `requirements.txt`). To add a new dependency:
+This project uses `uv` with `pyproject.toml` and `uv.lock` for dependency management (no `requirements.txt`). Use `uv add` so the lockfile stays in sync:
 
-1. Add it to the appropriate section in `pyproject.toml`:
-   - Production dependencies → `dependencies`
-   - Development dependencies → `project.optional-dependencies.dev`
-   - Test dependencies → `project.optional-dependencies.test`
+```bash
+# Production dependency
+uv add "new-package>=1.0.0"
 
-2. Reinstall the package:
-   ```bash
-   pip install -e ".[dev]"
-   ```
+# Development dependency (the `dev` extra)
+uv add --optional dev "new-tool>=1.0.0"
 
-Example:
-```toml
-[project]
-dependencies = [
-    "scipy>=1.15.2,<2.0.0",
-    "numpy>=1.26.0,<3.0.0",
-    "new-package>=1.0.0",  # Add here
-]
+# Test dependency (the `test` extra)
+uv add --optional test "new-tool>=1.0.0"
+```
+
+This updates the appropriate section of `pyproject.toml`, resolves and writes `uv.lock`, and installs into your environment. Commit both `pyproject.toml` and `uv.lock`.
+
+To sync your environment to the lockfile at any time (e.g. after pulling changes):
+```bash
+uv sync --extra dev
 ```
 
 ### Running Tests

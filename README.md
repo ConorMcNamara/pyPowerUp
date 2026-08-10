@@ -23,15 +23,17 @@ See the ['PowerUp!' Excel series](https://www.causalevaluation.org/) for more in
 ### From PyPI (when published)
 
 ```bash
-pip install pypowerup
+pip install pypowerupr
 ```
 
 ### From source
 
+This project uses [uv](https://docs.astral.sh/uv/) for dependency management.
+
 ```bash
 git clone https://github.com/ConorMcNamara/pyPowerUp.git
 cd pyPowerUp
-pip install -e .
+uv sync
 ```
 
 ### For development
@@ -39,17 +41,18 @@ pip install -e .
 ```bash
 git clone https://github.com/ConorMcNamara/pyPowerUp.git
 cd pyPowerUp
-pip install -e ".[dev]"
-pre-commit install
+uv sync --extra dev
+uv run pre-commit install
 ```
+
+Run any tool inside the managed environment with `uv run` (e.g. `uv run pytest`), or use the `make` targets (`make install-dev`, `make test`, `make all`).
 
 ### Generating requirements.txt (optional)
 
 If you need a `requirements.txt` file for legacy systems or Docker:
 
 ```bash
-pip install pip-tools
-pip-compile pyproject.toml
+uv export --no-dev --no-emit-project --format requirements-txt -o requirements.txt
 ```
 
 ## Requirements
