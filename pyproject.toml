@@ -98,6 +98,11 @@ untyped_function_return_mode = "inferred"
 line-length = 120
 indent-width = 4
 target-version = "py313"
+# Ruff 0.16+ formats Python code blocks embedded in Markdown by default, which
+# would collapse the intentionally multi-line examples in our docs. The
+# pre-commit ruff hooks only target Python files, so exclude Markdown here to
+# keep `ruff format .` / `ruff check .` (Makefile + CI) consistent with them.
+extend-exclude = ["*.md"]
 
 [tool.ruff.lint]
 select = [
