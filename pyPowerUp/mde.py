@@ -33,8 +33,8 @@ def mde_bcra3f2(
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
-    r21: int = 0,
-    r22: int = 0,
+    r21: float = 0,
+    r22: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
     """Calculate the Minimum Detectable Effect of a Three-Level Blocked (Fixed) Cluster-level Random Assignment Design, Treatment at Level 2.
@@ -110,8 +110,8 @@ def mde_bcra3r2(
     two_tailed: bool = True,
     p: float = 0.50,
     g3: int = 0,
-    r21: int = 0,
-    r22: int = 0,
+    r21: float = 0,
+    r22: float = 0,
     r2t3: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
@@ -198,9 +198,9 @@ def mde_bcra4f3(
     alpha: float = 0.10,
     two_tailed: bool = True,
     p: float = 0.50,
-    r21: int = 0,
-    r22: int = 0,
-    r23: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    r23: float = 0,
     g3: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
@@ -289,10 +289,10 @@ def mde_bcra4r2(
     alpha: float = 0.10,
     two_tailed: bool = True,
     p: float = 0.50,
-    r21: int = 0,
-    r22: int = 0,
-    r2t3: int = 0,
-    r2t4: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    r2t3: float = 0,
+    r2t4: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
@@ -391,10 +391,10 @@ def mde_bcra4r3(
     alpha: float = 0.10,
     two_tailed: bool = True,
     p: float = 0.50,
-    r21: int = 0,
-    r22: int = 0,
-    r23: int = 0,
-    r2t4: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    r23: float = 0,
+    r2t4: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
@@ -485,7 +485,7 @@ def mde_bira2c1(
     two_tailed: bool = True,
     p: float = 0.5,
     g1: int = 0,
-    r21: int = 0,
+    r21: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
     """Calculate the Minimum Detectable Effect of a Two-Level Blocked (Constant Treatment Effect) Individual-level Random Assignment Design, Treatment at Level 1.
@@ -551,7 +551,7 @@ def mde_bira2f1(
     two_tailed: bool = True,
     p: float = 0.50,
     g1: int = 0,
-    r21: int = 0,
+    r21: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
     """Calculate the Minimum Detectable Effect of a Two-Level Blocked (Fixed) Individual-level Random Assignment Design, Treatment at Level 1.
@@ -619,8 +619,8 @@ def mde_bira2r1(
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
-    r21: int = 0,
-    r2t2: int = 0,
+    r21: float = 0,
+    r2t2: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
     """Calculate the Minimum Detectable Effect of a Two-Level Blocked Individual-level Random Assignment Design, Treatment at Level 1.
@@ -697,9 +697,9 @@ def mde_bira3r1(
     alpha: float = 0.10,
     two_tailed: bool = True,
     p: float = 0.50,
-    r21: int = 0,
-    r2t2: int = 0,
-    r2t3: int = 0,
+    r21: float = 0,
+    r2t2: float = 0,
+    r2t3: float = 0,
     g3: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
@@ -793,10 +793,10 @@ def mde_bira4r1(
     alpha: float = 0.10,
     two_tailed: bool = True,
     p: float = 0.50,
-    r21: int = 0,
-    r2t2: int = 0,
-    r2t3: int = 0,
-    r2t4: int = 0,
+    r21: float = 0,
+    r2t2: float = 0,
+    r2t3: float = 0,
+    r2t4: float = 0,
     g4: int = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
@@ -894,8 +894,8 @@ def mde_cra2r2(
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
-    r21: int = 0,
-    r22: int = 0,
+    r21: float = 0,
+    r22: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
     """Calculate the Minimum Detectable Effect of a Two-level Cluster-randomized Trials to Detect Main, Moderation and Mediation Effects.
@@ -968,9 +968,9 @@ def mde_cra3r3(
     two_tailed: bool = True,
     p: float = 0.50,
     g3: int = 0,
-    r21: int = 0,
-    r22: int = 0,
-    r23: int = 0,
+    r21: float = 0,
+    r22: float = 0,
+    r23: float = 0,
     print_pretty: bool = True,
 ) -> dict[str, Any]:
     """Calculate the Minimum Detectable Effect of a Three-level Cluster-randomized Trials to Detect Main, Moderation, and Mediation Effects.

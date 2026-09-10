@@ -1130,7 +1130,7 @@ def sample_size_ira1r1(
     """
     df: float = 0
     for _i in range(100):
-        df = n0 - g1 - 1
+        df = n0 - g1 - 2
         if df < 0 or np.isinf(df):
             break
         T1 = abs(float(t_dist.ppf(alpha / 2, df))) if two_tailed else abs(float(t_dist.ppf(alpha, df)))
