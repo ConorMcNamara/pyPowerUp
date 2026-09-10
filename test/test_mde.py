@@ -114,7 +114,7 @@ def test_bira2c1() -> None:
 
 
 def test_bira2f1() -> None:
-    result = mde.mde_bira2c1(n=15, J=20, alpha=0.05)
+    result = mde.mde_bira2f1(n=15, J=20, alpha=0.05)
     # mdes.bira2f1(n=15, J=20)
     #
     # Minimum detectable effect size:

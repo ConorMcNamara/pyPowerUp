@@ -185,7 +185,7 @@ def _se_b321(
 
 
 def _se_sobel(x: float, y: float, se_x: float, se_y: float) -> float:
-    var_sobel = pow(x, 2) + pow(y, 2) + pow(se_x, 2) + pow(se_y, 2)
+    var_sobel = pow(x, 2) * pow(se_y, 2) + pow(y, 2) * pow(se_x, 2)
     if var_sobel < 0:
         raise ValueError("Variance cannot be less than 0")
     return sqrt(var_sobel)
