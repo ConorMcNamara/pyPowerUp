@@ -219,9 +219,7 @@ def test_cra3r3() -> None:
 
 
 def test_cra4r4() -> None:
-    result = power.power_cra4r4(
-        effect_size=0.412, rho4=0.05, rho3=0.05, rho2=0.10, n=10, J=2, K=3, L=20, alpha=0.05
-    )
+    result = power.power_cra4r4(effect_size=0.412, rho4=0.05, rho3=0.05, rho2=0.10, n=10, J=2, K=3, L=20, alpha=0.05)
     # power.cra4r4(es=.412, rho4=.05, rho3=.05, rho2=.10, n=10, J=2, K=3, L=20)
     #
     # Statistical power:
