@@ -1,6 +1,6 @@
 """Power analysis functions for multilevel randomized experiments."""
 
-from math import ceil, sqrt
+from math import sqrt
 
 from pyPowerUp.utils import _power
 
@@ -28,7 +28,7 @@ def power_bcra3f2(
     J: float,
     K: float,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
@@ -50,7 +50,7 @@ def power_bcra3f2(
         Number of level 3 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type I error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -69,7 +69,7 @@ def power_bcra3f2(
     -------
     The power of the test
     """
-    df = ceil(K * (J - 2) - g2)
+    df = K * (J - 2) - g2
     sse = sqrt(rho2 * (1 - r22) / (p * (1 - p) * J * K) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
@@ -104,7 +104,7 @@ def power_bcra3r2(
     J: float,
     K: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g3: int = 0,
@@ -132,7 +132,7 @@ def power_bcra3r2(
         Number of level 3 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -192,7 +192,7 @@ def power_bcra4f3(
     K: int,
     L: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -219,7 +219,7 @@ def power_bcra4f3(
         Number of level 4 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -282,7 +282,7 @@ def power_bcra4r2(
     K: int,
     L: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -318,7 +318,7 @@ def power_bcra4r2(
         Number of level 4 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -383,7 +383,7 @@ def power_bcra4r3(
     K: int,
     L: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -416,7 +416,7 @@ def power_bcra4r3(
         Number of level 4 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -475,7 +475,7 @@ def power_bira2c1(
     n: float,
     J: float,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g1: int = 0,
@@ -492,7 +492,7 @@ def power_bira2c1(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     effect_size : float, default=0.25
         Statistical power
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -509,7 +509,7 @@ def power_bira2c1(
     -------
     The power of our test
     """
-    df = ceil(J * (n - 1) - g1 - 1)
+    df = J * (n - 1) - g1 - 1
     sse = sqrt((1 - r21) / (p * (1 - p) * J * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
@@ -540,7 +540,7 @@ def power_bira2f1(
     n: int,
     J: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g1: int = 0,
@@ -557,7 +557,7 @@ def power_bira2f1(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -607,7 +607,7 @@ def power_bira2r1(
     n: float,
     J: float,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
@@ -630,7 +630,7 @@ def power_bira2r1(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -649,7 +649,7 @@ def power_bira2r1(
     -------
     The power of our test
     """
-    df = ceil(J - g2 - 1)
+    df = J - g2 - 1
     sse = sqrt(rho2 * omega2 * (1 - r2t2) / J + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
@@ -685,7 +685,7 @@ def power_bira3r1(
     J: float,
     K: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -716,7 +716,7 @@ def power_bira3r1(
         Number of level 3 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -780,7 +780,7 @@ def power_bira4r1(
     K: int,
     L: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -819,7 +819,7 @@ def power_bira4r1(
         Number of level 4 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -879,7 +879,7 @@ def power_cra2r2(
     n: float,
     J: float,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
@@ -899,7 +899,7 @@ def power_cra2r2(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -918,7 +918,7 @@ def power_cra2r2(
     -------
     The power of our test
     """
-    df = ceil(J - g2 - 2)
+    df = J - g2 - 2
     sse = sqrt(rho2 * (1 - r22) / (p * (1 - p) * J) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n))
     power = _power(effect_size, alpha, sse, df, two_tailed)
     if print_pretty:
@@ -952,7 +952,7 @@ def power_cra3r3(
     J: float,
     K: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g3: int = 0,
@@ -977,7 +977,7 @@ def power_cra3r3(
         Level 3 sample size
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -1038,7 +1038,7 @@ def power_cra4r4(
     K: float,
     L: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -1068,7 +1068,7 @@ def power_cra4r4(
         Number of level 4 units
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -1126,7 +1126,7 @@ def power_cra4r4(
 def power_ira1r1(
     n: int,
     effect_size: float = 0.25,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g1: int = 0,
@@ -1141,7 +1141,7 @@ def power_ira1r1(
         Sample size
     effect_size : float, default=0.25
         Effect size
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed

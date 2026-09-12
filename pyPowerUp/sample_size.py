@@ -29,7 +29,7 @@ def sample_size_bcra3f2(
     J: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     K0: float = 10,
     tol: float = 0.10,
@@ -53,7 +53,7 @@ def sample_size_bcra3f2(
         The effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type I error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -104,7 +104,7 @@ def sample_size_bcra3r2(
     J: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     K0: float = 10,
     tol: float = 0.10,
@@ -134,7 +134,7 @@ def sample_size_bcra3r2(
         Effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -276,7 +276,7 @@ def sample_size_bcra4r2(
     K: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     L0: float = 10,
     tol: float = 0.10,
@@ -314,7 +314,7 @@ def sample_size_bcra4r2(
         Effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -374,7 +374,7 @@ def sample_size_bcra4r3(
     K: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     L0: float = 10,
     tol: float = 0.10,
@@ -409,7 +409,7 @@ def sample_size_bcra4r3(
         The effect size
     power : float, default=0.8
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -544,7 +544,7 @@ def sample_size_bira2f1(
         The effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -614,7 +614,7 @@ def sample_size_bira2r1(
         The effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -664,7 +664,7 @@ def sample_size_bira3r1(
     J: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     K0: float = 10,
     tol: float = 0.10,
@@ -697,7 +697,7 @@ def sample_size_bira3r1(
         The effect size
     power : float, default=0.8
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -756,7 +756,7 @@ def sample_size_bira4r1(
     K: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     L0: float = 10,
     tol: float = 0.10,
@@ -797,7 +797,7 @@ def sample_size_bira4r1(
         Effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -852,7 +852,7 @@ def sample_size_cra2r2(
     n: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     J0: float = 10,
     tol: float = 0.10,
@@ -874,7 +874,7 @@ def sample_size_cra2r2(
         Effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -922,7 +922,7 @@ def sample_size_cra3r3(
     J: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     K0: float = 10,
     tol: float = 0.10,
@@ -949,7 +949,7 @@ def sample_size_cra3r3(
         Effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -1005,7 +1005,7 @@ def sample_size_cra4r4(
     K: float,
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     L0: float = 10,
     tol: float = 0.10,
@@ -1037,7 +1037,7 @@ def sample_size_cra4r4(
         Effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -1090,7 +1090,7 @@ def sample_size_cra4r4(
 def sample_size_ira1r1(
     effect_size: float = 0.25,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     n0: float = 10,
     tol: float = 0.10,
@@ -1107,7 +1107,7 @@ def sample_size_ira1r1(
         Effect size
     power : float, default=0.80
         The power of our test
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed

@@ -223,6 +223,24 @@ def test_cra3r3() -> None:
     assert result["95% Confidence Interval"][1] == pytest.approx(0.458, abs=0.001)
 
 
+def test_cra4r4() -> None:
+    result = mde.mde_cra4r4(rho4=0.05, rho3=0.05, rho2=0.10, n=10, J=2, K=3, L=20, alpha=0.05)
+    # mdes.cra4r4(rho4=.05, rho3=.05, rho2=.10, n=10, J=2, K=3, L=20)
+    #
+    # Minimum detectable effect size:
+    # ---------------------------------------
+    #  0.412 95% CI [0.12,0.704]
+    # ---------------------------------------
+    # Degrees of freedom: 18
+    # Standardized standard error: 0.139
+    # Type I error rate: 0.05
+    # Type II error rate: 0.2
+    # Two-tailed test: TRUE
+    assert result["minimum_detectable_effect"] == pytest.approx(0.412, abs=0.001)
+    assert result["95% Confidence Interval"][0] == pytest.approx(0.120, abs=0.001)
+    assert result["95% Confidence Interval"][1] == pytest.approx(0.704, abs=0.001)
+
+
 def test_ira1r1() -> None:
     result = mde.mde_ira1r1(n=250, alpha=0.05)
     # mdes.ira1r1(n=250)

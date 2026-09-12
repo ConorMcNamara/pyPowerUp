@@ -37,9 +37,10 @@ def _mde(power: float, alpha: float, sse: float, df: int, two_tailed: bool) -> d
     mde = m * sse
     lower_bound = mde * (1 - t1 / m)
     upper_bound = mde * (1 + t1 / m)
+    ci_pct = f"{round((1 - alpha) * 100, 1):g}"
     return {
         "minimum_detectable_effect": mde,
-        f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval": [lower_bound, upper_bound],
+        f"{ci_pct}% Confidence Interval": [lower_bound, upper_bound],
     }
 
 
@@ -104,7 +105,7 @@ def _se_b221(
 
 
 def _se_a211(esa: float, rhom2: float, r2m1: float, r2m2: float, n: int, J: float, p: float) -> float:
-    t2mbar = rhom2 * (1 - r2m2 - (p * (1 - p) * pow(esa, 2)) / rhom2)
+    t2mbar = rhom2 * (1 - r2m2) - p * (1 - p) * pow(esa, 2)
     sig2mbar = (1 - rhom2) * (1 - r2m1)
     var_a211 = (t2mbar + sig2mbar / n) / (J * p * (1 - p))
     if var_a211 < 0:
@@ -136,7 +137,7 @@ def _se_b211(
     J: float,
     p: float,
 ) -> float:
-    t2mbar = rhom2 * (1 - r2m2 - (p * (1 - p) * pow(esa, 2)) / rhom2)
+    t2mbar = rhom2 * (1 - r2m2) - p * (1 - p) * pow(esa, 2)
     sig2mbar = (1 - rhom2) * (1 - r2m1)
     t2ybar = (
         rho2 * (1 - r22)
@@ -155,8 +156,11 @@ def _se_b211(
     return sqrt(var_b211)
 
 
-def _se_a321(rhom3: float, r2m2: float, r2m3: float, p: float, J: float, K: int) -> float:
-    var_a321 = (rhom3 * (1 - r2m3) + (1 - rhom3) * (1 - r2m2) / J) / (p * (1 - p) * (K - 5))
+def _se_a321(rhom3: float, r2m2: float, r2m3: float, p: float, J: float, K: int, g3: int = 0) -> float:
+    df = K - g3 - 5
+    if df <= 0:
+        raise ValueError("Effective degrees of freedom (K - g3 - 5) must be positive")
+    var_a321 = (rhom3 * (1 - r2m3) + (1 - rhom3) * (1 - r2m2) / J) / (p * (1 - p) * df)
     if var_a321 < 0:
         raise ValueError("Variance cannot be less than 0")
     return sqrt(var_a321)
@@ -171,13 +175,16 @@ def _se_b321(
     r21: float,
     r22: float,
     r23: float,
-    _p: float,
     n: int,
     J: float,
     K: int,
+    g3: int = 0,
 ) -> float:
+    df = K - g3 - 6
+    if df <= 0:
+        raise ValueError("Effective degrees of freedom (K - g3 - 6) must be positive")
     var_b321 = (rho3 * (1 - r23) + rho2 * (1 - r22) / J + (1 - rho3 - rho2) * (1 - r21) / (n * J)) / (
-        (K - 6) * (rhom3 * (1 - r2m3) + (1 - rhom3) * (1 - r2m2) / J)
+        df * (rhom3 * (1 - r2m3) + (1 - rhom3) * (1 - r2m2) / J)
     )
     if var_b321 < 0:
         raise ValueError("Variance cannot be less than 0")

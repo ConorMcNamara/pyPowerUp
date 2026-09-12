@@ -218,6 +218,24 @@ def test_cra3r3() -> None:
     assert result == pytest.approx(0.800, abs=0.001)
 
 
+def test_cra4r4() -> None:
+    result = power.power_cra4r4(
+        effect_size=0.412, rho4=0.05, rho3=0.05, rho2=0.10, n=10, J=2, K=3, L=20, alpha=0.05
+    )
+    # power.cra4r4(es=.412, rho4=.05, rho3=.05, rho2=.10, n=10, J=2, K=3, L=20)
+    #
+    # Statistical power:
+    # ---------------------------------------
+    #  0.8
+    # ---------------------------------------
+    # Degrees of freedom: 18
+    # Standardized standard error: 0.139
+    # Type I error rate: 0.05
+    # Type II error rate: 0.2
+    # Two-tailed test: TRUE
+    assert result == pytest.approx(0.800, abs=0.001)
+
+
 def test_ira1r1() -> None:
     result = power.power_ira1r1(effect_size=0.356, n=250, alpha=0.05)
     # power.ira1r1(es=.356, n=250)

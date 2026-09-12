@@ -1,6 +1,6 @@
 """Minimum detectable effect size calculation functions for multilevel randomized experiments."""
 
-from math import ceil, sqrt
+from math import sqrt
 from typing import Any
 
 from pyPowerUp.utils import _mde
@@ -29,7 +29,7 @@ def mde_bcra3f2(
     J: float,
     K: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
@@ -51,7 +51,7 @@ def mde_bcra3f2(
         Number of level 3 units
     power : float, default=0.8
         Statistical power of the test.
-    alpha : float, default=0.10
+    alpha : float, default=0.05
         Probability of Type I error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -70,17 +70,17 @@ def mde_bcra3f2(
     -------
     A dictionary containing the minimum_detectable effect as well as confidence intervals for said effect
     """
-    df = ceil(K * (J - 2) - g2)
+    df = K * (J - 2) - g2
     sse = sqrt(rho2 * (1 - r22) / (p * (1 - p) * J * K) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * K * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -106,7 +106,7 @@ def mde_bcra3r2(
     J: float,
     K: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g3: int = 0,
@@ -134,7 +134,7 @@ def mde_bcra3r2(
         Number of level 3 units
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -163,13 +163,13 @@ def mde_bcra3r2(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -195,7 +195,7 @@ def mde_bcra4f3(
     K: int,
     L: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -222,7 +222,7 @@ def mde_bcra4f3(
         Number of level 4 units
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -251,13 +251,13 @@ def mde_bcra4f3(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -286,7 +286,7 @@ def mde_bcra4r2(
     K: int,
     L: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -322,7 +322,7 @@ def mde_bcra4r2(
         Number of level 4 units
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -354,13 +354,13 @@ def mde_bcra4r2(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -388,7 +388,7 @@ def mde_bcra4r3(
     K: int,
     L: int,
     power: float = 0.8,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -421,7 +421,7 @@ def mde_bcra4r3(
         Number of level 4 units
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -453,13 +453,13 @@ def mde_bcra4r3(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -481,7 +481,7 @@ def mde_bira2c1(
     n: float,
     J: float,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.5,
     g1: int = 0,
@@ -498,7 +498,7 @@ def mde_bira2c1(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -515,17 +515,17 @@ def mde_bira2c1(
     -------
     A dictionary containing the minimum_detectable effect as well as confidence intervals for said effect
     """
-    df = ceil(J * (n - 1) - g1 - 1)
+    df = J * (n - 1) - g1 - 1
     sse = sqrt((1 - r21) / (p * (1 - p) * J * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -547,7 +547,7 @@ def mde_bira2f1(
     n: int,
     J: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g1: int = 0,
@@ -564,7 +564,7 @@ def mde_bira2f1(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -585,13 +585,13 @@ def mde_bira2f1(
     sse = sqrt((1 - r21) / (p * (1 - p) * J * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -615,7 +615,7 @@ def mde_bira2r1(
     n: float,
     J: float,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g2: int = 0,
@@ -638,7 +638,7 @@ def mde_bira2r1(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -657,17 +657,17 @@ def mde_bira2r1(
     -------
     A dictionary containing the minimum_detectable effect as well as confidence intervals for said effect
     """
-    df = ceil(J - g2 - 1)
+    df = J - g2 - 1
     sse = sqrt(rho2 * omega2 * (1 - r2t2) / J + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -694,7 +694,7 @@ def mde_bira3r1(
     J: float,
     K: int,
     power: float = 0.8,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -725,7 +725,7 @@ def mde_bira3r1(
         Number of level 3 units
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -754,13 +754,13 @@ def mde_bira3r1(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -790,7 +790,7 @@ def mde_bira4r1(
     K: int,
     L: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -829,7 +829,7 @@ def mde_bira4r1(
         Number of level 4 units
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -861,13 +861,13 @@ def mde_bira4r1(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -910,7 +910,7 @@ def mde_cra2r2(
         Harmonic mean of level 2 units across level 3 units (or simple average)
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -929,17 +929,17 @@ def mde_cra2r2(
     -------
     A dictionary containing the minimum_detectable effect as well as confidence intervals for said effect
     """
-    df = ceil(J - g2 - 2)
+    df = J - g2 - 2
     sse = sqrt(rho2 * (1 - r22) / (p * (1 - p) * J) + (1 - rho2) * (1 - r21) / (p * (1 - p) * J * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -964,7 +964,7 @@ def mde_cra3r3(
     J: float,
     K: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g3: int = 0,
@@ -989,7 +989,7 @@ def mde_cra3r3(
         Level 3 sample size
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -1018,13 +1018,13 @@ def mde_cra3r3(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -1051,7 +1051,7 @@ def mde_cra4r4(
     K: float,
     L: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     r21: float = 0,
@@ -1081,7 +1081,7 @@ def mde_cra4r4(
         Number of level 4 units
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -1113,13 +1113,13 @@ def mde_cra4r4(
     )
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
@@ -1140,7 +1140,7 @@ def mde_cra4r4(
 def mde_ira1r1(
     n: int,
     power: float = 0.80,
-    alpha: float = 0.10,
+    alpha: float = 0.05,
     two_tailed: bool = True,
     p: float = 0.50,
     g1: int = 0,
@@ -1155,7 +1155,7 @@ def mde_ira1r1(
         Sample size
     power : float, default=0.8
         Statistical power
-    alpha : float, default=0.1
+    alpha : float, default=0.05
         Probability of Type 1 error
     two_tailed : bool, default=True
         Whether our hypothesis is one tailed or two tailed
@@ -1176,13 +1176,13 @@ def mde_ira1r1(
     sse = sqrt((1 - r21) / (p * (1 - p) * n))
     mde = _mde(power, alpha, sse, df, two_tailed)
     if print_pretty:
-        confidence_intervals = [round(i, 3) for i in mde[f"{int((1 - round(alpha, 2)) * 100)}% Confidence Interval"]]
+        confidence_intervals = [round(i, 3) for i in mde[f"{round((1 - alpha) * 100, 1):g}% Confidence Interval"]]
         str_print = (
             "Minimum Detectable Effect Size"
             + "\n"
             + "-" * 39
             + "\n"
-            + f" {round(mde['minimum_detectable_effect'], 3)} {int((1 - round(alpha, 2)) * 100)}% CI {confidence_intervals}"
+            + f" {round(mde['minimum_detectable_effect'], 3)} {round((1 - alpha) * 100, 1):g}% CI {confidence_intervals}"
             + "\n"
             + "-" * 39
             + "\n"
